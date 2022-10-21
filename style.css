@@ -1,0 +1,36 @@
+body {
+    background-color: lightseagreen;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    text-align: center;
+    margin: 20%;
+    font-size: 100px;
+}
+button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 40px;
+}
+a {
+    color: white;
+}
+a:hover {
+    font-weight: bold;
+}
+input {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    padding-bottom: 40px;
+}
+.active {
+    display: block;
+}
+.hidden {
+    display: none;
+}
