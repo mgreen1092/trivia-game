@@ -34,3 +34,25 @@ input {
 .hidden {
     display: none;
 }
+h2 {
+    text-align: center;
+}
+
+#answerA {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+#answerB {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+#answerC {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 12px;
+}

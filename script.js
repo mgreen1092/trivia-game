@@ -4,7 +4,7 @@ console.log(mainPage)
 let nameInput = document.querySelector('.active')
 let playGameButton = document.querySelector('#play-game')
 let questionSlot = document.querySelector('h2')
-let answerSlot = document.querySelector('h3')
+let answerSlot = document.querySelector('#answer-section')
 let answerA = document.querySelector('#answerA')
 let answerB = document.querySelector('#answerB')
 let answerC = document.querySelector('#answerC')
@@ -28,13 +28,18 @@ function questionsAppear () {
     // mainPage.classList.remove('active')
     mainPage.style.display = 'none';
     for (let i=0; i<questions.length; i++) {
-        let randomQuestion = Math.floor(Math.random()*questions.length)
-        console.log(randomQuestion)
-        let questionsAppear = questions[randomQuestion].question
-        console.log(questionsAppear)
-        let questionAnswers = questions[randomQuestion].answers[0]
+        let randomQuestion = Math.floor(Math.random()*questions.length);
+        console.log(randomQuestion);
+        let questionsAppear = questions[randomQuestion].question;
+        console.log(questionsAppear);
+        questionAnswerA = questions[randomQuestion].answers[0];
+        questionAnswerB = questions[randomQuestion].answers[1];
+        questionAnswerC = questions[randomQuestion].answers[2];
         questionSlot.innerText = questionsAppear
-        answerSlot.innerText = questionAnswers
+        answerSlot.style.display = 'block';
+        answerA.innerText = questionAnswerA;
+        answerB.innerText = questionAnswerB;
+        answerC.innerText = questionAnswerC;
     }
     
 }
