@@ -9,20 +9,34 @@
     <title>Trivia</title>
 </head>
 <body>
-    <nav id="nav" class="active"><a href="#">Instructions</a></nav>
-    <h1 id="h1" class="active">TRIVIA</h1>
-    <div class="container">
-        <input class="active" id="name-input" type="text" placeholder="Name">
-    </div>
+    <div id="main-page">
+        <nav id="nav" class="active"><a href="#">Instructions</a></nav>
+        <h1 id="h1" class="active">GOLF TRIVIA</h1>
+        <div class="container">
+            <input class="active" id="name-input" type="text" placeholder="Name">
+        </div>
+        <div>
+            <button class="active" id="play-game">Play Game</button>
+        </div>
+    </div> 
     <div>
-        <button class="active" id="play-game">Play Game</button>
-    </div>
-    <div>
-        <p class="hidden" id="q1">What is your name?
-            <ul class="hidden" id="q1Choices">
-                <li>Morgan</li>
-                <li>Elizabeth</li>
-                <li>Green</li>
+        <h2></h2>
+        <button class="hidden" id="answerA"></button>
+        <button class="hidden" id="answerB"></button>
+        <button class="hidden" id="answerC"></button>
+
+        <h3></h3>
+        <button class="hidden"></button>
+        <p class="hidden" id="q1">Q1: What is your name?
+            <div class="hidden">
+                <button id="q1Correct" class="correct">Morgan</button>
+                <button class="correct">Elizabeth</button>
+                <button class="correct">Green</button>
+            </div>
+            <!-- <ul class="hidden" id="q1Choices">
+                <li id="q1Correct" class="correct">Morgan</li>
+                <li class="incorrect">Elizabeth</li>
+                <li class="incorrect">Green</li> -->
             </ul>
         </p>
     </div>

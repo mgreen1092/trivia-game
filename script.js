@@ -1,27 +1,42 @@
 //select all elements
-let mainPage = document.querySelectorAll('.active')
+let mainPage = document.getElementById('main-page')
 console.log(mainPage)
-let nav = document.querySelector('#nav')
-let trivia = document.querySelector('#h1')
 let nameInput = document.querySelector('.active')
 let playGameButton = document.querySelector('#play-game')
-let questionOne = document.querySelector('#q1')
-let questionOneChoices = document.querySelector('#q1Choices')
+let questionSlot = document.querySelector('h2')
+let answerSlot = document.querySelector('h3')
+let answerA = document.querySelector('#answerA')
+let answerB = document.querySelector('#answerB')
+let answerC = document.querySelector('#answerC')
 
 //click button to go to next page with questions
-
-playGameButton.addEventListener('click', questionOneAppear)
-
-function questionOneAppear () {
+let questions = [
+    {question: 'What is my name?',
+     answers: ['A: Morgan', 'B: Elizabeth', 'C: Green'],
+     correct: 'Morgan',
+    },
+    {question: "Where do I live?",
+     answers: ["A: Boston", "B: Acton", "C: Phoenix"],
+     correct: 'Acton',
+    }
+]
+let questionsCorrect = []
+playGameButton.addEventListener('click', questionsAppear)
+// console.log(questions[0].question)
+function questionsAppear () {
     //how to clear the background
-    mainPage.classList.remove('active')
-    mainPage.classList.add('hidden')
-    //get questions to appear
-    questionOne.classList.remove('hidden')
-    questionOneChoices.classList.remove('hidden')
-    questionOne.classList.add('active')
-    questionOne.classList.add('active')
-
+    // mainPage.classList.remove('active')
+    mainPage.style.display = 'none';
+    for (let i=0; i<questions.length; i++) {
+        let randomQuestion = Math.floor(Math.random()*questions.length)
+        console.log(randomQuestion)
+        let questionsAppear = questions[randomQuestion].question
+        console.log(questionsAppear)
+        let questionAnswers = questions[randomQuestion].answers[0]
+        questionSlot.innerText = questionsAppear
+        answerSlot.innerText = questionAnswers
+    }
+    
 }
 
 //question appears when screen clears with three multiple choice answers
