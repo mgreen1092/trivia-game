@@ -4,14 +4,15 @@ let mainPage = document.getElementById('main-page')
 
 //instructions modal
 let modal = document.querySelector('#modal')
-let openModal = document.querySelector('#openModal')
+let openModal = document.querySelector('#open-modal')
 let modalTextbox = document.querySelector('#modal-textbox')
 let closeModal = document.querySelector('#close')
 
 //Main page elements
-let nameInput = document.querySelector('.active')
+let nameInput = document.querySelector('#name-input')
 let playGameButton = document.querySelector('#play-game')
 let questionSlot = document.querySelector('h2')
+let nameSubmit = document.querySelector('#name-submit')
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -19,12 +20,16 @@ let answer0 = document.querySelector('#answer0')
 let answer1 = document.querySelector('#answer1')
 let answer2 = document.querySelector('#answer2')
 
-//elements of response modal
+//correct/incorrect response modal
 let answerModal = document.querySelector('#response-modal')
 let correctModal = document.querySelector('#correct-answer')
 let incorrectModal = document.querySelector('#incorrect-answer')
 let nextButton = document.querySelector('#next-button')
 
+//Back Button
+let backButton = document.querySelector('#back-button')
+
+//================================================================
 
 //Instructions open
 function openInstructions () {
@@ -37,7 +42,13 @@ function closeInstructions () {
 openModal.addEventListener("click", openInstructions)
 closeModal.addEventListener("click", closeInstructions)
 
-//click button to go to next page with questions
+//When name submit button is clicked, border turns green 
+nameSubmit.addEventListener('click', submitName)
+function submitName () {
+    nameInput.style.border = '5px solid green';
+}
+
+//Questions
 let questions = [
     {question: 'What is my name?',
      answers: ['A: Morgan', 'B: Elizabeth', 'C: Green'],
@@ -68,6 +79,7 @@ function questionsAppear () {
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
+    questionSlot.style.display = 'block';
     let questionsAppear = questions[randomQuestion].question;
     questionSlot.innerText = questionsAppear
     //display answer options
@@ -117,5 +129,11 @@ function answerSelection (evt) {
 
 //if back button is selected, the main page appears
 
+function returnHome () {
+    questionSlot.style.display = 'none';
+    answerSlot.style.display = 'none';
+    mainPage.style.display = 'block';
+}
+backButton.addEventListener('click', returnHome)
 
 
