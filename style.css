@@ -8,16 +8,21 @@ h1 {
     margin: 20%;
     font-size: 100px;
 }
-button {
+#openModal {
+    font-size: 25px;
+    display: flex;
+    justify-content: start;
+}
+#play-game {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     font-size: 40px;
 }
-a {
-    color: white;
+#play-game:hover {
+    font-weight: bold;
 }
-a:hover {
+#openModal:hover {
     font-weight: bold;
 }
 input {
@@ -28,9 +33,7 @@ input {
 .container {
     padding-bottom: 40px;
 }
-.active {
-    display: block;
-}
+
 .hidden {
     display: none;
 }
@@ -38,21 +41,90 @@ h2 {
     text-align: center;
 }
 
-#answerA {
+#answer0 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     border-radius: 12px;
 }
-#answerB {
+#answer1 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     border-radius: 12px;
 }
-#answerC {
+#answer2 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
     border-radius: 12px;
+}
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+	display: none;
+}
+#modal-textbox {
+	background-color: white;
+    color: black;
+	height: 200px;
+	width: 500px;
+	border-radius: 2px;
+	margin: 150px auto;
+	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	/*This will give the box some depth.*/
+	font-size: 15px;
+	padding: 2%;
+	/* line-height: 120%; */
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#modal-footer {
+	text-align: right;
+}
+#response-modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+	display: none;
+}
+
+#answer-modal {
+	background-color: white;
+    color: black;
+	height: 100px;
+	width: 150px;
+	border-radius: 2px;
+	margin: 150px auto;
+	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	/*This will give the box some depth.*/
+	font-size: 15px;
+	padding: 2%;
+	/* line-height: 120%; */
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#correct-answer {
+    display: none;
+}
+#incorrect-answer {
+    display: none;
 }

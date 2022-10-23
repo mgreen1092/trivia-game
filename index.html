@@ -10,7 +10,17 @@
 </head>
 <body>
     <div id="main-page">
-        <nav id="nav" class="active"><a href="#">Instructions</a></nav>
+        <button id="openModal">Instructions</button>
+        <div id="modal">
+            <div id="modal-textbox">
+                <p>Instructions<p>
+                <p>Welcome to golf trivia!</p>
+                <p>Questions will appear with a set of three possible answers. At the end of the set of questions, you will be able to see your score. Compete with friends to test your golf knowledge! </p>
+                <div id="modal-footer">
+                    <button class="modal-buttons" id="close">Back</button>
+                </div>
+            </div>
+        </div>
         <h1 id="h1" class="active">GOLF TRIVIA</h1>
         <div class="container">
             <input class="active" id="name-input" type="text" placeholder="Name">
@@ -22,25 +32,18 @@
     <div>
         <h2></h2>
         <div class='hidden' id='answer-section'>
-            <button id="answerA"></button>
-            <button id="answerB"></button>
-            <button id="answerC"></button>
-        </div>
-
-        <h3></h3>
-        <button class="hidden"></button>
-        <p class="hidden" id="q1">Q1: What is your name?
-            <div class="hidden">
-                <button id="q1Correct" class="correct">Morgan</button>
-                <button class="correct">Elizabeth</button>
-                <button class="correct">Green</button>
+            <button id="answer0"></button>
+            <button id="answer1"></button>
+            <button id="answer2"></button>
+            <button>Back</button>
+            <div id="response-modal">
+                <div id='answer-modal'>
+                <p id='correct-answer'>Correct!</p>
+                <p id='incorrect-answer'>Incorrect!</p>
+                <button id='next-button'>Next</button>
+                </div>
             </div>
-            <!-- <ul class="hidden" id="q1Choices">
-                <li id="q1Correct" class="correct">Morgan</li>
-                <li class="incorrect">Elizabeth</li>
-                <li class="incorrect">Green</li> -->
-            </ul>
-        </p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
