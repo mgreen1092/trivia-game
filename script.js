@@ -109,6 +109,7 @@ function answerSelection (evt) {
             //correct modal appears
             answerModal.style.display = 'block';
             correctModal.style.display = 'block';
+            incorrectModal.style.display = 'none';
             //if correct, add one to questionsCorrect array
             questionsCorrect += 1;
             // console.log(questionsCorrect)
@@ -120,6 +121,7 @@ function answerSelection (evt) {
             //incorrect modal appears
             answerModal.style.display = 'block';
             incorrectModal.style.display = 'block';
+            correctModal.style.display = 'none';
         }, 100)
     }
     //remove the question that was asked from the array so the questions won't repeat
