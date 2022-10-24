@@ -167,8 +167,8 @@ h2 {
 #answer-modal {
 	background-color: white;
     color: black;
-	height: 100px;
-	width: 150px;
+	height: 150px;
+	width: 200px;
 	border-radius: 2px;
 	margin: 150px auto;
 	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
@@ -189,6 +189,9 @@ h2 {
     display: none;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+#modal-details {
+    text-align: left;
 }
 #back-button {
     /* margin-right: 100%; */
