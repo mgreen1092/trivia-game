@@ -53,6 +53,7 @@ let questions = [
     {question: 'Where was the 2022 US Open held?',
      answers: ['A: Brookline Country Club', 'B: Torrey Pines Golf Course', 'C: Pebble Beach'],
      correct: 0,
+     correctInfo: 'The Brookline Country Club has held the US Open in 1913, 1963, and 1988.'
     },
     {question: "Who won the 2022 US Open?",
      answers: ["A: Tiger Woods", "B: Rory McIlroy", "C: Matt Fitzpatrick"],
