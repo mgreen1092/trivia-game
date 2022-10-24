@@ -103,9 +103,11 @@ let questions = [
 
 //Global Variables
 let questionsCorrect = 0
+let randomQuestion = Math.floor(Math.random()*questions.length);
+
+//Question functionality
 playGameButton.addEventListener('click', questionsAppear)
 nextButton.addEventListener('click', questionsAppear)
-let randomQuestion = Math.floor(Math.random()*questions.length);
 
 function questionsAppear () {
     //remove answer modal when entering a new question
@@ -118,8 +120,9 @@ function questionsAppear () {
     })
     //removes main display to allow questions to appear
     mainPage.style.display = 'none';
+    //Results message
     if (questions.length === 0) {
-        let exitMessage = `Congrats ${nameInput.value}! You got ${questionsCorrect} questions correct! Play again and challenge your friends.`
+        let exitMessage = `Congrats ${nameInput.value}! You got ${questionsCorrect} question(s) correct! Play again and challenge your friends.`
         questionSlot.innerText = exitMessage;
         answerSlot.style.display = 'none';
     } 
