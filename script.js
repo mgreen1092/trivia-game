@@ -47,18 +47,56 @@ nameSubmit.addEventListener('click', submitName)
 function submitName () {
     nameInput.style.border = '5px solid green';
 }
-
+//=============================================================================================
 //Questions
 let questions = [
-    {question: 'What is my name?',
-     answers: ['A: Morgan', 'B: Elizabeth', 'C: Green'],
+    {question: 'Where was the 2022 US Open held?',
+     answers: ['A: Brookline Country Club', 'B: Torrey Pines Golf Course', 'C: Pebble Beach'],
      correct: 0,
     },
-    {question: "Where do I live?",
-     answers: ["A: Boston", "B: Acton", "C: Phoenix"],
-     correct: 1,
-    }
+    {question: "Who won the 2022 US Open?",
+     answers: ["A: Tiger Woods", "B: Rory McIlroy", "C: Matt Fitzpatrick"],
+     correct: 2,
+    },
+    {question: "How many times has Tiger Woods won the masters?",
+    answers: ["A: 5", "B: 3", "C: 6"],
+    correct: 0,
+    },
+    {question: "Who won the 2022 US Women's Open Golf Championship?",
+    answers: ["A: Mina Harigae", "B: Minjee Lee", "C: Nelly Korda"],
+    correct: 1,
+    },
+    {question: "Who was the first woman golfer to play in a men's PGA tour event?",
+    answers: ["A: Annika Sorenstam", "B: Babe Didrikson Zaharias", "C: Michelle Wie"],
+    correct: 1,
+    },
+    {question: "Where did golf originate?",
+    answers: ["A: Englad", "B: United States", "C: Scotland"],
+    correct: 2,
+    },
+    {question: "When was the LPGA founded?",
+    answers: ["A: 1950", "B: 1990", "C: 1970"],
+    correct: 0,
+    },
+    {question: "Which women golfer won the most major championships?",
+    answers: ["A: Annika Sorenstam", "B: Mickey Wright", "C: Patty Berg"],
+    correct: 2,
+    },
+    {question: "Since 1970, who was the youngest person to win a PGA tour championship?",
+    answers: ["A: Jordan Spieth", "B: Tiger Woods", "C: Rory McIlroy"],
+    correct: 0,
+    },
+    {question: "What is the only major Rory McIlroy hasn't won?",
+    answers: ["A: US Open", "B: The Masters", "C: The PGA Championship"],
+    correct: 1,
+    },
+    {question: "What is an albatross?",
+    answers: ["A: Double par", "B: Hole in one", "C: 3 under par on a hole"],
+    correct: 2,
+    },
 ]
+//============================================================================
+
 //Global Variables
 let questionsCorrect = 0
 playGameButton.addEventListener('click', questionsAppear)
@@ -127,6 +165,10 @@ function answerSelection (evt) {
     //remove the question that was asked from the array so the questions won't repeat
     questions.splice(randomQuestion, 1)
     // console.log(questions)
+    if (questions === []) {
+        let exitMessage = `Congrats${nameInput.value}! You got ${questionsCorrect} questions correct! Play again and challenge your friends.`
+        questionSlot.innerText = exitMessage;
+    }
 }
 
 //if back button is selected, the main page appears
@@ -135,6 +177,7 @@ function returnHome () {
     questionSlot.style.display = 'none';
     answerSlot.style.display = 'none';
     mainPage.style.display = 'block';
+    questionsCorrect=0;
 }
 backButton.addEventListener('click', returnHome)
 

@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id='main-page'>
-        <button id='open-modal'>Instructions</button>
+        <nav>
+            <button id='open-modal'>Instructions</button>
+        </nav>
         <div id='modal'>
             <div id='modal-textbox'>
                 <p>Instructions:<p>
@@ -21,17 +23,23 @@
                 </div>
             </div>
         </div>
-        <h1 id='h1' class='active'>GOLF TRIVIA</h1>
-        <div class='container'>
-            <input id='name-input' type='text' placeholder='Name'> 
-            <button id='name-submit'>Submit</button>
+        <div id='trivia-title'>
+            <h1 id='h1' class='active'>GOLF TRIVIA</h1>
         </div>
-        <div>
-            <button id='play-game'>Play Game</button>
+        <div id="bottom-section">
+            <div class='container'>
+                <input id='name-input' type='text' placeholder='Name'> 
+                <button id='name-submit'>Submit</button>
+            </div>
+            <div>
+                <button id='play-game'>Play Game</button>
+            </div>
         </div>
     </div> 
     <div>
-        <h2></h2>
+        <div id="question-section">
+            <h2></h2>
+        </div>
         <div class='hidden' id='answer-section'>
             <button class='color-change' id='answer0'></button>
             <button class='color-change' id='answer1'></button>

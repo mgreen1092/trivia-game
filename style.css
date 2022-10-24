@@ -1,11 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-    background-color: lightseagreen;
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
+nav {
+    background-color: green;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#trivia-title {
+    background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
+    position: relative;
+    background-size: cover;
+    /* height: 470px;
+    width: 100%; */
+}
 h1 {
     text-align: center;
-    margin: 20%;
+    /* margin: 20%; */
+    padding: 120px;
     font-size: 100px;
 }
 #open-modal {
@@ -14,6 +30,12 @@ h1 {
     justify-content: start;
     /* background-color: transparent;
     border: none; */
+    margin-top: 2px;
+    margin-left: 10px;
+}
+#bottom-section {
+    background-color: lightgray;
+    padding: 10px;
 }
 #play-game {
     display: flex;
@@ -27,45 +49,50 @@ h1 {
 #open-modal:hover {
     font-weight: bold;
 }
-/* .container {
-    display: inline-block;
-    margin: 0 auto;
-} */
+
 .container {
     display: flex;
     flex-flow: row-wrap;
-    align-items: center;
+    justify-content: center;
     padding-bottom: 40px;
-    /* margin: 0 auto; */
-    margin-left: 20%;
-    margin-right: 20%;
 }
 input {
     vertical-align: middle;
-    /* margin: 0 auto; */
+    padding:10px;
 }
 #name-submit {
-    margin-left: 10px;
-    /* margin: 0 auto; */
+    padding: 10px;
+    display: inline-block;
 }
 .hidden {
     display: none;
 }
 h2 {
     text-align: center;
-    /* margin-top: 20%; */
+    padding-top: 130px;
+    padding-bottom: 50px;
+    color: black;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-#answer-section{
-    margin: 20%;
+#question-section {
+    background-color: lightgray;
+}
+#answer-section {
+    background-color: green;
+    padding-top: 20px;
 }
 #answer0 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 20px;
     border-radius: 12px;
     font-size: 28px;
+}
+#answer0:hover{
+    font-weight: bold;
 }
 #answer1 {
     display: flex;
@@ -76,6 +103,9 @@ h2 {
     border-radius: 12px;
     font-size: 28px;
 }
+#answer1:hover{
+    font-weight: bold;
+}
 #answer2 {
     display: flex;
     justify-content: center;
@@ -84,6 +114,9 @@ h2 {
     margin-bottom: 20px;
     border-radius: 12px;
     font-size: 28px;
+}
+#answer2:hover{
+    font-weight: bold;
 }
 #modal {
 	background-color: rgba(0,0,0,0.4);
@@ -145,13 +178,21 @@ h2 {
 	padding: 2%;
 	/* line-height: 120%; */
 	font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 #correct-answer {
     display: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 #incorrect-answer {
     display: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 #back-button {
-    margin-right: 100%;
+    /* margin-right: 100%; */
+    margin-left: 10px;
+    margin-top: 200px;
+    margin-bottom: 100%;
 }
