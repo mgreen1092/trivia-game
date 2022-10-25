@@ -39,24 +39,8 @@ console.log(soundButton)
 let soundNav = document.querySelector('#sound-nav')
 let soundCount;
 soundButton.addEventListener('click', playPause)
-// soundButton.addEventListener('click', play)
-// soundButton.addEventListener('click', pause)
 
-// function play () {
-//     if (soundCount === 0) {
-//         soundCount = 1;
-//         mastersSound.play(); 
-//         soundNav.innerText = 'Sound: 🔊'
-//     }
-// }
-// function pause () {
-//     if(soundCount === 1){
-//         soundCount = 0;
-//         mastersSound.pause()
-//         soundNav.innerText = 'Sound: 🔇'
-//     }
-// }
-
+let correctSound = document.querySelector('#golf-clap-sound')
 //================================================================
 
 //Instructions open
@@ -193,10 +177,6 @@ function questionsAppear () {
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
     questionSlot.style.display = 'flex';
-    // if (questionSlot.style.display = 'block') {
-    //     questionsNav.style.display = 'block';
-    //     scoreNav.innerText = `Score: ${questionsCorrect}`
-    // }
     questionsNav.style.display = 'flex';
     scoreNav.innerText = `Score: ${questionsCorrect}`
     // console.log(questions[randomQuestion].question,"Random question object")
@@ -210,7 +190,7 @@ function questionsAppear () {
     answer0.innerText = questionAnswerA;
     answer1.innerText = questionAnswerB;
     answer2.innerText = questionAnswerC;
-
+    //update question count for nav bar
     questionCount += 1
     questionCountNav.innerText = `Question: ${questionCount}/11`
 }
@@ -229,10 +209,6 @@ function playPause () {
     }
     console.log(soundCount)
 }
-function handleClick (e) {
-    console.log(e.target.id);
-}
-document.querySelector('#sound-button').addEventListener('click', handleClick)
 
 //selecting answers
 answer0.addEventListener('click', answerSelection)
@@ -249,6 +225,7 @@ function answerSelection (evt) {
         // console.log(evt.target.id[6])
         //change correct answer background color to green
         evt.target.style.backgroundColor = 'lightgreen'
+        correctSound.play()
         setTimeout (function(evt) {
             //correct modal appears
             answerModal.style.display = 'block';
