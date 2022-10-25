@@ -100,17 +100,19 @@ input {
     font-size: 25px;
 }
 h2 {
-    text-align: center;
     padding-top: 130px;
     padding-bottom: 50px;
     color: black;
+    /* margin: 0 auto; */
 }
-
 #question-section {
     background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #answer-section {
-    background-color: lightgray;
+    /* background-color: lightgray; */
     padding-top: 20px;
 }
 #answer0 {
@@ -120,10 +122,11 @@ h2 {
     padding-left: 10px;
     width: 370px;
     font-size: 28px;
+    background: aqua;
 }
 #answer0:hover{
     font-weight: bold;
-    background: gray;
+    background-color: purple;
 }
 #answer1 {
     display: flex;

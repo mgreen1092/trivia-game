@@ -221,3 +221,17 @@ function returnHome () {
     questionsCorrect=0;
 }
 backButton.addEventListener('click', returnHome)
+
+//hover functionality to answer selection
+answer0.addEventListener("mouseenter", () => {
+    answer0.style.backgroundColor = 'gray'; })
+answer0.addEventListener("mouseleave", () => {
+    answer0.style.backgroundColor = 'white'; })
+answer1.addEventListener("mouseenter", () => {
+    answer1.style.backgroundColor = 'gray'; })
+answer1.addEventListener("mouseleave", () => {
+    answer1.style.backgroundColor = 'white'; })
+answer2.addEventListener("mouseenter", () => {
+    answer2.style.backgroundColor = 'gray'; })
+answer2.addEventListener("mouseleave", () => {
+    answer2.style.backgroundColor = 'white'; })
