@@ -9,12 +9,17 @@
     <title>Trivia</title>
 </head>
 <body>
+    <audio controls id='masters-sound'>
+        <source src='masters-sound.mp3' type='audio/mpeg'>
+    </audio>
     <nav class='hidden' id="trivia-nav">
         <ul class='hidden' id='list-item-nav'>
             <li id='golf-nav'>⛳️ Golf Trivia</li>
             <li id='question-nav'>Question: </li>
             <li id='score-nav'></li>
-            <li id='sound-nav'>Sound: </li>
+            <li id='sound-nav'>
+                <button id='sound-button'>Sound: 🔈</button>
+            </li>
         </ul>
     </nav>
     <div id='main-page'>

@@ -31,6 +31,27 @@ let nextButton = document.querySelector('#next-button')
 //Back Button
 let backButton = document.querySelector('#back-button')
 
+//Sound
+let mastersSound = document.querySelector('#masters-sound')
+mastersSound.autoplay = false;
+let soundButton = document.querySelector('#sound-button')
+console.log(soundButton)
+let soundNav = document.querySelector('#sound-nav')
+let soundCount = 0;
+soundButton.addEventListener('click', playPause)
+// soundButton.addEventListener('click', soundOff)
+
+function playPause () {
+    if (soundCount === 0) {
+        soundCount = 1;
+        mastersSound.play(); 
+        soundNav.innerText = 'Sound: 🔊'
+    } else if(soundCount === 1){
+        soundCount = 0;
+        mastersSound.pause()
+        soundNav.innerText = 'Sound: 🔇'
+    }
+}
 //================================================================
 
 //Instructions open
@@ -245,3 +266,5 @@ backButton.addEventListener('click', returnHome)
 //     answer2.style.backgroundColor = 'gray'; })
 // answer2.addEventListener("mouseleave", () => {
 //     answer2.style.backgroundColor = 'white'; })
+
+//Sound functionality

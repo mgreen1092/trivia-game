@@ -40,6 +40,12 @@ body {
 #sound-nav {
     padding-right: 10px;
 }
+#sound-button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+}
 #trivia-title {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
     position: relative;
