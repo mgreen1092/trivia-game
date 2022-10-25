@@ -13,8 +13,6 @@ body {
 }
 #trivia-nav {
     background-color: gray;
-    /* margin: 0 auto; */
-    /* margin: 0; */
 }
 .hidden {
     display: none;
@@ -25,32 +23,31 @@ body {
     justify-content: flex-end;
     padding-top: 10px;
     padding-bottom: 10px;
-    list-style-type: none;
 }
 #golf-nav {
-    /* padding-right: 600px;  */
     margin-right: auto;
+    padding-left: 10px;
+}
+#question-nav {
     padding-left: 60px;
+    text-align: center;
 }
 #score-nav {
-    /* margin-left: 80%; */
     padding-left: 60px;
     padding-right: 60px;
 }
 #sound-nav {
-    /* padding-left: 20px; */
-    padding-right: 70px;
+    padding-right: 10px;
 }
 #trivia-title {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
     position: relative;
     background-size: cover;
-    /* height: 470px;
-    width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 h1 {
-    text-align: center;
-    /* margin: 20%; */
     padding: 120px;
     font-size: 100px;
 }
@@ -58,8 +55,6 @@ h1 {
     font-size: 25px;
     display: flex;
     justify-content: start;
-    /* background-color: transparent;
-    border: none; */
     margin-top: 2px;
     margin-left: 10px;
 }
@@ -112,7 +107,7 @@ h2 {
     align-items: center;
 }
 #answer-section {
-    /* background-color: lightgray; */
+    background-color: lightgray;
     padding-top: 20px;
 }
 #answer0 {
@@ -122,11 +117,10 @@ h2 {
     padding-left: 10px;
     width: 370px;
     font-size: 28px;
-    background: aqua;
+    text-align: left;
 }
 #answer0:hover{
     font-weight: bold;
-    background-color: purple;
 }
 #answer1 {
     display: flex;
@@ -136,10 +130,10 @@ h2 {
     padding-left: 10px;
     width: 370px;
     font-size: 28px;
+    text-align: left;
 }
 #answer1:hover{
     font-weight: bold;
-    background-color: gray;
 }
 #answer2 {
     display: flex;
@@ -150,10 +144,10 @@ h2 {
     /* height: 70px; */
     width: 370px;
     font-size: 28px;
+    text-align: left;
 }
 #answer2:hover{
     font-weight: bold;
-    background-color: gray;
 }
 #modal {
 	background-color: rgba(0,0,0,0.4);
@@ -220,19 +214,19 @@ h2 {
 #correct-answer {
     display: none;
     padding-top: 5px;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
     font-weight: bold;
     font-size: 20px;
 }
 #incorrect-answer {
     display: none;
-    padding-top: 5px;
+    /* padding-top: 5px; */
     padding-bottom: 40px;
     font-weight: bold;
 }
 #modal-details {
     text-align: left;
-    padding-bottom: 20px;
+    padding-bottom: 35px;
     font-size: 16px;
 }
 #next-button {
@@ -240,8 +234,29 @@ h2 {
     font-size: 20px;
 }
 #back-button {
-    /* margin-right: 100%; */
     margin-left: 10px;
     margin-top: 200px;
     margin-bottom: 100%;
+}
+
+@media only screen and (max-width: 460px) {
+    #list-item-nav {
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    #question-nav{
+        padding-left: 0;
+    }
+    #golf-nav {
+        margin: 0;
+        padding-left: 0;
+    }
+    #score-nav {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #sound-nav {
+        padding-right: 0;
+    }
+
 }

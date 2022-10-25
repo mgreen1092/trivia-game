@@ -14,6 +14,7 @@ let playGameButton = document.querySelector('#play-game')
 let questionSlot = document.querySelector('h2')
 let questionsNav = document.querySelector('#trivia-nav')
 let scoreNav = document.querySelector('#score-nav')
+let questionCountNav = document.querySelector('#question-nav')
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -117,6 +118,7 @@ let questions = [
 
 //Global Variables
 let questionsCorrect = 0
+let questionCount = 0
 let randomQuestion = Math.floor(Math.random()*questions.length);
 let question = []
 //Question functionality
@@ -155,7 +157,7 @@ function questionsAppear () {
     //     questionsNav.style.display = 'block';
     //     scoreNav.innerText = `Score: ${questionsCorrect}`
     // }
-    questionsNav.style.display = 'block';
+    questionsNav.style.display = 'flex';
     scoreNav.innerText = `Score: ${questionsCorrect}`
     // console.log(questions[randomQuestion].question,"Random question object")
     question = questions[randomQuestion]
@@ -168,6 +170,9 @@ function questionsAppear () {
     answer0.innerText = questionAnswerA;
     answer1.innerText = questionAnswerB;
     answer2.innerText = questionAnswerC;
+
+    questionCount += 1
+    questionCountNav.innerText = `Question: ${questionCount}/11`
 }
 
 //selecting answers
@@ -195,7 +200,7 @@ function answerSelection (evt) {
             //add to questions correct score, if answer is correct
             questionsCorrect = questionsCorrect + 1;
             // console.log(questionsCorrect, '# Correct')
-        }, 100)
+        }, 200)
     } else {
         //if incorrect, background changes to lightcoral
         evt.target.style.backgroundColor = 'lightcoral';
@@ -206,10 +211,11 @@ function answerSelection (evt) {
             correctModal.style.display = 'none';
             //add in the additional information from questions object
             answerDetails.innerText = question.incorrectInfo
-        }, 100)
+        }, 200)
     }
     //remove the question that was asked from the array so the questions won't repeat
     questions.splice(randomQuestion, 1)
+
     // console.log(questionsCorrect, "# Correct")  
 }
 //if back button is selected, the main page appears
@@ -218,20 +224,24 @@ function returnHome () {
     questionSlot.style.display = 'none';
     answerSlot.style.display = 'none';
     mainPage.style.display = 'block';
+    questionsNav.style.display = 'none';
     questionsCorrect=0;
+    questionCount=0;
+    nameInput = '';
+    // console.log(questionCount)
 }
 backButton.addEventListener('click', returnHome)
 
 //hover functionality to answer selection
-answer0.addEventListener("mouseenter", () => {
-    answer0.style.backgroundColor = 'gray'; })
-answer0.addEventListener("mouseleave", () => {
-    answer0.style.backgroundColor = 'white'; })
-answer1.addEventListener("mouseenter", () => {
-    answer1.style.backgroundColor = 'gray'; })
-answer1.addEventListener("mouseleave", () => {
-    answer1.style.backgroundColor = 'white'; })
-answer2.addEventListener("mouseenter", () => {
-    answer2.style.backgroundColor = 'gray'; })
-answer2.addEventListener("mouseleave", () => {
-    answer2.style.backgroundColor = 'white'; })
+// answer0.addEventListener("mouseenter", () => {
+//     answer0.style.backgroundColor = 'gray'; })
+// answer0.addEventListener("mouseleave", () => {
+//     answer0.style.backgroundColor = 'white'; })
+// answer1.addEventListener("mouseenter", () => {
+//     answer1.style.backgroundColor = 'gray'; })
+// answer1.addEventListener("mouseleave", () => {
+//     answer1.style.backgroundColor = 'white'; })
+// answer2.addEventListener("mouseenter", () => {
+//     answer2.style.backgroundColor = 'gray'; })
+// answer2.addEventListener("mouseleave", () => {
+//     answer2.style.backgroundColor = 'white'; })
