@@ -5,6 +5,7 @@
 body {
     color: white;
     font-family: 'Montserrat', sans-serif;
+    background-color: lightgray;
 }
 #main-page-nav {
     background-color: green;
@@ -69,7 +70,6 @@ h1 {
     padding-top: 20px;
 }
 #bottom-section {
-    background-color: lightgray;
     padding: 10px;
 }
 #play-game:hover {
@@ -176,7 +176,6 @@ h2 {
 	padding: 2%;
 	/* line-height: 120%; */
 	font-family: Arial, Helvetica, sans-serif;
-
 }
 #modal-footer {
 	text-align: right;
@@ -194,7 +193,6 @@ h2 {
 	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 	display: none;
 }
-
 #answer-modal {
 	background-color: white;
     color: black;
@@ -238,7 +236,9 @@ h2 {
     margin-top: 200px;
     margin-bottom: 100%;
 }
-
+/* #script-section {
+    background-color: lightgray;
+} */
 @media only screen and (max-width: 460px) {
     #list-item-nav {
         flex-direction: column;
