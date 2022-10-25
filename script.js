@@ -150,7 +150,7 @@ function questionsAppear () {
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
-    questionSlot.style.display = 'block';
+    questionSlot.style.display = 'flex';
     // if (questionSlot.style.display = 'block') {
     //     questionsNav.style.display = 'block';
     //     scoreNav.innerText = `Score: ${questionsCorrect}`

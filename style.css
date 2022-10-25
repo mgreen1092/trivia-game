@@ -13,10 +13,8 @@ body {
 }
 #trivia-nav {
     background-color: gray;
-    margin: 0 auto;
-    list-style-type: none;
-    /* display: flex; */
-    margin: 0;
+    /* margin: 0 auto; */
+    /* margin: 0; */
 }
 .hidden {
     display: none;
@@ -24,13 +22,24 @@ body {
 #list-item-nav {
     list-style-type: none;
     display: flex;
-    margin: 0 10px;
+    justify-content: flex-end;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style-type: none;
 }
 #golf-nav {
-
+    /* padding-right: 600px;  */
+    margin-right: auto;
+    padding-left: 60px;
 }
 #score-nav {
-    margin-left: 80%;
+    /* margin-left: 80%; */
+    padding-left: 60px;
+    padding-right: 60px;
+}
+#sound-nav {
+    /* padding-left: 20px; */
+    padding-right: 70px;
 }
 #trivia-title {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
@@ -95,8 +104,6 @@ h2 {
     padding-top: 130px;
     padding-bottom: 50px;
     color: black;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 #question-section {
