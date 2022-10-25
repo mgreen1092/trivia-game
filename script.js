@@ -37,21 +37,26 @@ mastersSound.autoplay = false;
 let soundButton = document.querySelector('#sound-button')
 console.log(soundButton)
 let soundNav = document.querySelector('#sound-nav')
-let soundCount = 0;
+let soundCount;
 soundButton.addEventListener('click', playPause)
-// soundButton.addEventListener('click', soundOff)
+// soundButton.addEventListener('click', play)
+// soundButton.addEventListener('click', pause)
 
-function playPause () {
-    if (soundCount === 0) {
-        soundCount = 1;
-        mastersSound.play(); 
-        soundNav.innerText = 'Sound: 🔊'
-    } else if(soundCount === 1){
-        soundCount = 0;
-        mastersSound.pause()
-        soundNav.innerText = 'Sound: 🔇'
-    }
-}
+// function play () {
+//     if (soundCount === 0) {
+//         soundCount = 1;
+//         mastersSound.play(); 
+//         soundNav.innerText = 'Sound: 🔊'
+//     }
+// }
+// function pause () {
+//     if(soundCount === 1){
+//         soundCount = 0;
+//         mastersSound.pause()
+//         soundNav.innerText = 'Sound: 🔇'
+//     }
+// }
+
 //================================================================
 
 //Instructions open
@@ -99,7 +104,7 @@ let questions = [
     incorrectInfo: 'The correct answer is Babe Didrikson Zaharias.'
     },
     {question: 'Where did golf originate?',
-    answers: ['A: Englad', 'B: United States', 'C: Scotland'],
+    answers: ['A: England', 'B: United States', 'C: Scotland'],
     correct: 2,
     correctInfo: 'Golf was first documented being played in Scotland in 1457.',
     incorrectInfo: 'The correct answer is Scotland.'
@@ -134,6 +139,19 @@ let questions = [
     correctInfo: 'Albatross is also synonymous to a double eagle.',
     incorrectInfo: 'The correct answer is albatross'
     },
+    {question: 'Which golf course is the oldest course in the world?',
+    answers: ['A: Saint Andrews Old Course', 'B: Pebble Beach', 'C: Kinghorn Golf Club'],
+    correct: 0,
+    correctInfo: 'Golf has been played at the Saint Andrews Old Course, located in Scotland, since 1552.',
+    incorrectInfo: 'The correct answer is Saint Andrews Old Course.'
+    }, 
+    {question: 'Who invented the golf ball?',
+    answers: ['A: ', 'B: ', 'C: Haskell Coburn'],
+    correct: 2,
+    correctInfo: '.',
+    incorrectInfo: 'The correct answer is albatross'
+    },
+
 ]
 //============================================================================
 
@@ -149,6 +167,7 @@ nextButton.addEventListener('click', questionsAppear)
 console.log(playGameButton)
 
 function questionsAppear () {
+    soundCount = '-1';
     //remove answer modal when entering a new question
     answerModal.style.display = 'none';
     //remove background color change when entering a new question
@@ -195,6 +214,25 @@ function questionsAppear () {
     questionCount += 1
     questionCountNav.innerText = `Question: ${questionCount}/11`
 }
+//Sound function
+function playPause () {
+    if (soundCount === '-1') {
+        soundCount = '1';
+        console.log('play')
+        mastersSound.play(); 
+        soundButton.innerText = 'Sound: 🔊'
+    } else if (soundCount === '1') {
+        soundCount = '-1';
+        console.log('pause')
+        mastersSound.pause()
+        soundButton.innerText = 'Sound: 🔇'
+    }
+    console.log(soundCount)
+}
+function handleClick (e) {
+    console.log(e.target.id);
+}
+document.querySelector('#sound-button').addEventListener('click', handleClick)
 
 //selecting answers
 answer0.addEventListener('click', answerSelection)
