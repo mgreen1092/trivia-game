@@ -12,7 +12,8 @@ let closeModal = document.querySelector('#close')
 let nameInput = document.querySelector('#name-input')
 let playGameButton = document.querySelector('#play-game')
 let questionSlot = document.querySelector('h2')
-let nameSubmit = document.querySelector('#name-submit')
+let questionsNav = document.querySelector('#trivia-nav')
+let scoreNav = document.querySelector('#score-nav')
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -42,11 +43,6 @@ function closeInstructions () {
 openModal.addEventListener("click", openInstructions)
 closeModal.addEventListener("click", closeInstructions)
 
-//When name submit button is clicked, border turns green 
-nameSubmit.addEventListener('click', submitName)
-function submitName () {
-    nameInput.style.border = '5px solid green';
-}
 //=============================================================================================
 //Questions
 let questions = [
@@ -57,57 +53,77 @@ let questions = [
      incorrectInfo: 'The correct answer is Brookline Country Club.',
     },
     {question: "Who won the 2022 US Open?",
-     answers: ["A: Tiger Woods", "B: Rory McIlroy", "C: Matt Fitzpatrick"],
+     answers: ['A: Tiger Woods', 'B: Rory McIlroy', 'C: Matt Fitzpatrick'],
      correct: 2,
-     correctInfo: 'This was Matt Fitzpatricks first major golf championship title.',
+     correctInfo: 'This was Matt Fitzpatrick\'s first major golf championship title.',
      incorrectInfo: 'The correct answer was Matt Fitzpatrick.',
     },
-    // {question: "How many times has Tiger Woods won the masters?",
-    // answers: ["A: 5", "B: 3", "C: 6"],
-    // correct: 0,
-    // },
-    // {question: "Who won the 2022 US Women's Open Golf Championship?",
-    // answers: ["A: Mina Harigae", "B: Minjee Lee", "C: Nelly Korda"],
-    // correct: 1,
-    // },
-    // {question: "Who was the first woman golfer to play in a men's PGA tour event?",
-    // answers: ["A: Annika Sorenstam", "B: Babe Didrikson Zaharias", "C: Michelle Wie"],
-    // correct: 1,
-    // },
-    // {question: "Where did golf originate?",
-    // answers: ["A: Englad", "B: United States", "C: Scotland"],
-    // correct: 2,
-    // },
-    // {question: "When was the LPGA founded?",
-    // answers: ["A: 1950", "B: 1990", "C: 1970"],
-    // correct: 0,
-    // },
-    // {question: "Which women golfer won the most major championships?",
-    // answers: ["A: Annika Sorenstam", "B: Mickey Wright", "C: Patty Berg"],
-    // correct: 2,
-    // },
-    // {question: "Since 1970, who was the youngest person to win a PGA tour championship?",
-    // answers: ["A: Jordan Spieth", "B: Tiger Woods", "C: Rory McIlroy"],
-    // correct: 0,
-    // },
-    // {question: "What is the only major Rory McIlroy hasn't won?",
-    // answers: ["A: US Open", "B: The Masters", "C: The PGA Championship"],
-    // correct: 1,
-    // },
-    // {question: "What is an albatross?",
-    // answers: ["A: Double par", "B: Hole in one", "C: 3 under par on a hole"],
-    // correct: 2,
-    // },
+    {question: 'How many times has Tiger Woods won the masters?',
+    answers: ['A: 5', 'B: 3', 'C: 6'],
+    correct: 0,
+    correctInfo: 'Tiger Woods has won the masters 5 times, and ranks just one below Jack Nicklaus with 6 wins.',
+    incorrectInfo: 'The correct answer is Tiger Woods.'
+    },
+    {question: 'Who won the 2022 US Women\'s Open Golf Championship?',
+    answers: ['A: Mina Harigae', 'B: Minjee Lee', 'C: Nelly Korda'],
+    correct: 1,
+    correctInfo: 'This was Minjee Lee\'s second major title win. She won by four strokes!',
+    incorrectInfo: 'The correct answer is Minjee Lee.'
+    },
+    {question: 'Who was the first woman golfer to play in a men\'s PGA tour event?',
+    answers: ['A: Annika Sorenstam', 'B: Babe Didrikson Zaharias', 'C: Michelle Wie'],
+    correct: 1,
+    correctInfo: 'Babe Didrikson Zaharias competed in the men\'s PGA tour in 1945.',
+    incorrectInfo: 'The correct answer is Babe Didrikson Zaharias.'
+    },
+    {question: 'Where did golf originate?',
+    answers: ['A: Englad', 'B: United States', 'C: Scotland'],
+    correct: 2,
+    correctInfo: 'Golf was first documented being played in Scotland in 1457.',
+    incorrectInfo: 'The correct answer is Scotland.'
+    },
+    {question: 'When was the LPGA founded?',
+    answers: ['A: 1950', 'B: 1990', 'C: 1970'],
+    correct: 0,
+    correctInfo: 'The LPGA is one of the longest-running women\'s professional sports association in the world.',
+    incorrectInfo: 'The correct answer is 1950.'
+    },
+    {question: 'Which women golfer won the most major championships?',
+    answers: ['A: Annika Sorenstam', 'B: Mickey Wright', 'C: Patty Berg'],
+    correct: 2,
+    correctInfo: 'Patty Berg won a total of 15 LPGA major championship.',
+    incorrectInfo: 'The correct answer is Patty Berg.'
+    },
+    {question: 'Since 1970, who was the youngest person to win a PGA tour championship?',
+    answers: ['A: Jordan Spieth', 'B: Tiger Woods', 'C: Rory McIlroy'],
+    correct: 0,
+    correctInfo: 'Jordan Spieth was 19 years old when he won the Deere in 2013.',
+    incorrectInfo: 'The correct answer is Jordan Spieth.'
+    },
+    {question: 'What is the only major Rory McIlroy hasn\'t won?',
+    answers: ['A: US Open', 'B: The Masters', 'C: The PGA Championship'],
+    correct: 1,
+    correctInfo: 'Rory McIlroy came extremely close to winning the Masters in 2022, but came in second.',
+    incorrectInfo: 'The correct answer is the Masters.'
+    },
+    {question: 'What is an albatross?',
+    answers: ['A: Double par', 'B: Hole in one', 'C: 3 under par on a hole'],
+    correct: 2,
+    correctInfo: 'Albatross is also synonymous to a double eagle.',
+    incorrectInfo: 'The correct answer is albatross'
+    },
 ]
 //============================================================================
 
 //Global Variables
 let questionsCorrect = 0
 let randomQuestion = Math.floor(Math.random()*questions.length);
-
+let question = []
 //Question functionality
 playGameButton.addEventListener('click', questionsAppear)
 nextButton.addEventListener('click', questionsAppear)
+
+console.log(playGameButton)
 
 function questionsAppear () {
     //remove answer modal when entering a new question
@@ -122,17 +138,28 @@ function questionsAppear () {
     mainPage.style.display = 'none';
     //Results message
     if (questions.length === 0) {
-        let exitMessage = `Congrats ${nameInput.value}! You got ${questionsCorrect} question(s) correct! Play again and challenge your friends.`
+        let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question(s) correct! Play again and challenge your friends.`
         questionSlot.innerText = exitMessage;
-        answerSlot.style.display = 'none';
+        answer0.style.display = 'none';
+        answer1.style.display = 'none';
+        answer2.style.display = 'none';
+        backButton.style.display = 'block';
+        backButton.style.margin = '0 auto';
+        backButton.style.fontSize = '35px';
     } 
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
     questionSlot.style.display = 'block';
+    // if (questionSlot.style.display = 'block') {
+    //     questionsNav.style.display = 'block';
+    //     scoreNav.innerText = `Score: ${questionsCorrect}`
+    // }
+    questionsNav.style.display = 'block';
+    scoreNav.innerText = `Score: ${questionsCorrect}`
     // console.log(questions[randomQuestion].question,"Random question object")
-    let questionsAppear = questions[randomQuestion].question;
-    questionSlot.innerText = questionsAppear
+    question = questions[randomQuestion]
+    questionSlot.innerText = question.question
     //display answer options
     questionAnswerA = questions[randomQuestion].answers[0];
     questionAnswerB = questions[randomQuestion].answers[1];
@@ -163,27 +190,22 @@ function answerSelection (evt) {
             answerModal.style.display = 'block';
             correctModal.style.display = 'block';
             incorrectModal.style.display = 'none';
-            // randomQuestion = Math.floor(Math.random()*questions.length);
-            // console.log(questions[randomQuestion],"correctInfo")
-            // answerDetails = document.querySelector('#modal-details')
-            // let additionalCorrectInfo = evt.target.correctInfo
-            // answerDetails.innerText=additionalCorrectInfo
-            //if correct, add one to questionsCorrect array
-            questionsCorrect = 0
+            //add in the additional information from questions object
+            answerDetails.innerText = question.correctInfo
+            //add to questions correct score, if answer is correct
             questionsCorrect = questionsCorrect + 1;
-            console.log(questionsCorrect, '# Correct')
+            // console.log(questionsCorrect, '# Correct')
         }, 100)
     } else {
         //if incorrect, background changes to lightcoral
-        evt.target.style.backgroundColor = 'lightcoral'
+        evt.target.style.backgroundColor = 'lightcoral';
         setTimeout (function(evt) {
             //incorrect modal appears
             answerModal.style.display = 'block';
             incorrectModal.style.display = 'block';
             correctModal.style.display = 'none';
-            // answerDetails = document.querySelector('#modal-details')
-            // let additionalIncorrectInfo = evt.target.incorrectInfo
-            // answerDetails.innerText=additionalIncorrectInfo
+            //add in the additional information from questions object
+            answerDetails.innerText = question.incorrectInfo
         }, 100)
     }
     //remove the question that was asked from the array so the questions won't repeat
@@ -199,10 +221,3 @@ function returnHome () {
     questionsCorrect=0;
 }
 backButton.addEventListener('click', returnHome)
-
-// function quizCompletion () { 
-//     if (questions === false) {
-//         let exitMessage = `Congrats${nameInput.value}! You got ${questionsCorrect} questions correct! Play again and challenge your friends.`
-//         questionSlot.innerText = exitMessage;
-//     }
-// }

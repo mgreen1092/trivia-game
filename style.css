@@ -6,10 +6,31 @@ body {
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
-nav {
+#main-page-nav {
     background-color: green;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+#trivia-nav {
+    background-color: gray;
+    margin: 0 auto;
+    list-style-type: none;
+    /* display: flex; */
+    margin: 0;
+}
+.hidden {
+    display: none;
+}
+#list-item-nav {
+    list-style-type: none;
+    display: flex;
+    margin: 0 10px;
+}
+#golf-nav {
+
+}
+#score-nav {
+    margin-left: 80%;
 }
 #trivia-title {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
@@ -43,16 +64,9 @@ h1 {
 #spacing {
     padding-top: 20px;
 }
-
 #bottom-section {
     background-color: lightgray;
     padding: 10px;
-}
-#play-game {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 40px;
 }
 #play-game:hover {
     font-weight: bold;
@@ -60,7 +74,6 @@ h1 {
 #open-modal:hover {
     font-weight: bold;
 }
-
 .container {
     display: flex;
     flex-flow: row-wrap;
@@ -71,12 +84,11 @@ input {
     vertical-align: middle;
     padding:10px;
 }
-#name-submit {
+#play-game {
     padding: 10px;
     display: inline-block;
-}
-.hidden {
-    display: none;
+    font-weight: bold;
+    font-size: 25px;
 }
 h2 {
     text-align: center;
@@ -86,48 +98,52 @@ h2 {
     margin-left: 10%;
     margin-right: 10%;
 }
+
 #question-section {
     background-color: lightgray;
 }
 #answer-section {
-    background-color: green;
+    background-color: lightgray;
     padding-top: 20px;
 }
 #answer0 {
     display: flex;
-    justify-content: center;
     margin: 0 auto;
-    /* margin-top: 20px; */
     margin-bottom: 20px;
-    border-radius: 12px;
+    padding-left: 10px;
+    width: 370px;
     font-size: 28px;
 }
 #answer0:hover{
     font-weight: bold;
+    background: gray;
 }
 #answer1 {
     display: flex;
-    justify-content: center;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 12px;
+    padding-left: 10px;
+    width: 370px;
     font-size: 28px;
 }
 #answer1:hover{
     font-weight: bold;
+    background-color: gray;
 }
 #answer2 {
     display: flex;
-    justify-content: center;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 12px;
+    padding-left: 10px;
+    /* height: 70px; */
+    width: 370px;
     font-size: 28px;
 }
 #answer2:hover{
     font-weight: bold;
+    background-color: gray;
 }
 #modal {
 	background-color: rgba(0,0,0,0.4);
@@ -178,7 +194,7 @@ h2 {
 #answer-modal {
 	background-color: white;
     color: black;
-	height: 150px;
+	height: 180px;
 	width: 200px;
 	border-radius: 2px;
 	margin: 150px auto;
@@ -193,16 +209,25 @@ h2 {
 }
 #correct-answer {
     display: none;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 5px;
+    padding-bottom: 40px;
+    font-weight: bold;
+    font-size: 20px;
 }
 #incorrect-answer {
     display: none;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 5px;
+    padding-bottom: 40px;
+    font-weight: bold;
 }
 #modal-details {
     text-align: left;
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+#next-button {
+    margin-bottom: 0px;
+    font-size: 20px;
 }
 #back-button {
     /* margin-right: 100%; */
