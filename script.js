@@ -129,13 +129,12 @@ let questions = [
     correctInfo: 'Golf has been played at the Saint Andrews Old Course, located in Scotland, since 1552.',
     incorrectInfo: 'The correct answer is Saint Andrews Old Course.'
     }, 
-    {question: 'Who invented the golf ball?',
-    answers: ['A: ', 'B: ', 'C: Haskell Coburn'],
-    correct: 2,
-    correctInfo: '.',
-    incorrectInfo: 'The correct answer is albatross'
-    },
-
+    {question: 'What is Tiger Woods\' real first name?',
+    answers: ['A: John', 'B: Eldrick', 'C: Terry'],
+    correct: 1,
+    correctInfo: 'Tiger got the nickname from his father in honor of his lost friend in Vietnam.',
+    incorrectInfo: 'The correct answer is Eldrick.'
+    }, 
 ]
 //============================================================================
 
@@ -255,7 +254,6 @@ function answerSelection (evt) {
     // console.log(questionsCorrect, "# Correct")  
 }
 //if back button is selected, the main page appears
-
 function returnHome () {
     questionSlot.style.display = 'none';
     answerSlot.style.display = 'none';
@@ -282,4 +280,3 @@ backButton.addEventListener('click', returnHome)
 // answer2.addEventListener("mouseleave", () => {
 //     answer2.style.backgroundColor = 'white'; })
 
-//Sound functionality
