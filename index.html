@@ -10,12 +10,14 @@
     <title>Trivia</title>
 </head>
 <body>
-    <audio id='masters-sound'>
+    <audio loop id='masters-sound'>
         <source src='masters-sound.mp3' type='audio/mpeg'>
     </audio>
     <nav class='hidden' id="trivia-nav">
         <ul class='hidden' id='list-item-nav'>
-            <li id='golf-nav'>⛳️ Golf Trivia</li>
+            <li id='golf-nav'>
+                <button id='back-button'>⛳️ Golf Trivia</button>
+            </li>
             <li id='question-nav'>Question: </li>
             <li id='score-nav'></li>
             <li id='sound-nav'>
@@ -31,9 +33,9 @@
             <div id='modal-textbox'>
                 <p id='instructions-label'>Instructions:<p>
                 <p class='instructions-description'>Welcome to golf trivia!</p>
-                <p class='instructions-description' id='spacing'>Questions will appear with a set of three possible answers. Select the correct resposne and at the end of the set of questions, you will be able to see your score. Compete with friends to test your golf knowledge!</p>
+                <p class='instructions-description' id='spacing'>Questions will appear with a set of three possible answers. Select the correct response and at the end of the set of questions, you will be able to see your score. Compete with friends to test your golf knowledge!</p>
                 <div id='modal-footer'>
-                    <button class='modal-buttons' id='close'>Back</button>
+                    <button class='modal-buttons' id='close'>Okay</button>
                 </div>
             </div>
         </div>
@@ -55,17 +57,17 @@
             <button class='color-change' id='answer0'></button>
             <button class='color-change' id='answer1'></button>
             <button class='color-change' id='answer2'></button>
-            <button id='back-button'>Return Home</button>
-            <div id='response-modal'>
-                <div id='answer-modal'>
-                    <p id='correct-answer'>Correct!</p>
-                        <audio id='golf-clap-sound'>
-                            <source src='golf-clap.mp3' type='audio/mpeg'>
-                        </audio>
-                    <p id='incorrect-answer'>Incorrect!</p>
-                    <p id='modal-details'></p>
-                    <button id='next-button'>Next</button>
-                </div>
+            <!-- <button id='back-button'>Return Home</button> -->
+        </div>
+        <div id='response-modal'>
+            <div id='answer-modal'>
+                <p id='correct-answer'>Correct!</p>
+                    <audio id='golf-clap-sound'>
+                         <source src='golf-clap.mp3' type='audio/mpeg'>
+                    </audio>
+                <p id='incorrect-answer'>Incorrect!</p>
+                <p id='modal-details'></p>
+                <button id='next-button'>Next</button>
             </div>
         </div>
     </div>

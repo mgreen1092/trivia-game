@@ -3,17 +3,25 @@
     padding: 0;
 }
 body {
-    color: white;
     font-family: 'Montserrat', sans-serif;
-    background-color: lightgray;
+}
+#main-page {
+    background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    color: white;
 }
 #main-page-nav {
-    background-color: green;
+    background-color: #3f3c3c;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 #trivia-nav {
-    background-color: gray;
+    background-color: #3f3c3c;
+    color: white;
 }
 .hidden {
     display: none;
@@ -47,9 +55,6 @@ body {
     font-size: 20px;
 }
 #trivia-title {
-    background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
-    position: relative;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,6 +62,7 @@ body {
 h1 {
     padding: 120px;
     font-size: 100px;
+    text-align: center;
 }
 #open-modal {
     font-size: 25px;
@@ -97,31 +103,38 @@ input {
 #play-game {
     padding: 10px;
     display: inline-block;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 25px;
 }
 h2 {
-    padding-top: 130px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 60px;
     color: black;
-    /* margin: 0 auto; */
+    text-align: center;
 }
 #question-section {
-    background-color: lightgray;
+    background-color: lightslategray;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
+    margin-left:20%;
+    margin-right: 20%;
 }
 #answer-section {
-    background-color: lightgray;
+    background-color: lightslategray;
     padding-top: 20px;
+    padding-bottom: 135px;
+    margin-left:20%;
+    margin-right:20%;
+    /* margin-bottom: 15%; */
 }
 #answer0 {
     display: flex;
     margin: 0 auto;
     margin-bottom: 20px;
     padding-left: 10px;
-    width: 370px;
+    width: 450px;
     font-size: 28px;
     text-align: left;
 }
@@ -134,7 +147,7 @@ h2 {
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 10px;
-    width: 370px;
+    width: 450px;
     font-size: 28px;
     text-align: left;
 }
@@ -147,8 +160,7 @@ h2 {
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 10px;
-    /* height: 70px; */
-    width: 370px;
+    width: 450px;
     font-size: 28px;
     text-align: left;
 }
@@ -224,12 +236,11 @@ h2 {
 }
 #incorrect-answer {
     display: none;
-    /* padding-top: 5px; */
     padding-bottom: 40px;
     font-weight: bold;
 }
 #modal-details {
-    text-align: left;
+    text-align: center;
     padding-bottom: 35px;
     font-size: 16px;
 }
@@ -238,9 +249,10 @@ h2 {
     font-size: 20px;
 }
 #back-button {
-    margin-left: 10px;
-    margin-top: 200px;
-    margin-bottom: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
 }
 @media only screen and (max-width: 460px) {
     #list-item-nav {
@@ -261,5 +273,4 @@ h2 {
     #sound-nav {
         padding-right: 0;
     }
-
 }

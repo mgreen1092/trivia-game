@@ -163,8 +163,16 @@ function questionsAppear () {
     mainPage.style.display = 'none';
     //Results message
     if (questions.length === 0) {
-        let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question(s) correct! Play again and challenge your friends.`
-        questionSlot.innerText = exitMessage;
+        if (questionsCorrect === 1) {
+            let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`
+            questionSlot.innerText = exitMessage;
+        } else if (questionsCorrect === 0) {
+            let exitMessage = `Oh no, ${nameInput.value}, you didn't get any correct! Looks like you need to study more. Play again to see if you can beat your score.`
+            questionSlot.innerText = exitMessage;
+        } else {
+            let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`
+            questionSlot.innerText = exitMessage;
+        }
         answer0.style.display = 'none';
         answer1.style.display = 'none';
         answer2.style.display = 'none';
@@ -191,7 +199,7 @@ function questionsAppear () {
     answer2.innerText = questionAnswerC;
     //update question count for nav bar
     questionCount += 1
-    questionCountNav.innerText = `Question: ${questionCount}/11`
+    questionCountNav.innerText = `Question: ${questionCount}/13`
 }
 //Sound function
 function playPause () {
@@ -225,7 +233,7 @@ function answerSelection (evt) {
         //change correct answer background color to green
         evt.target.style.backgroundColor = 'lightgreen'
         correctSound.play()
-        setTimeout (function(evt) {
+        setTimeout (function() {
             //correct modal appears
             answerModal.style.display = 'block';
             correctModal.style.display = 'block';
@@ -239,7 +247,7 @@ function answerSelection (evt) {
     } else {
         //if incorrect, background changes to lightcoral
         evt.target.style.backgroundColor = 'lightcoral';
-        setTimeout (function(evt) {
+        setTimeout (function() {
             //incorrect modal appears
             answerModal.style.display = 'block';
             incorrectModal.style.display = 'block';
@@ -250,8 +258,6 @@ function answerSelection (evt) {
     }
     //remove the question that was asked from the array so the questions won't repeat
     questions.splice(randomQuestion, 1)
-
-    // console.log(questionsCorrect, "# Correct")  
 }
 //if back button is selected, the main page appears
 function returnHome () {
@@ -261,7 +267,7 @@ function returnHome () {
     questionsNav.style.display = 'none';
     questionsCorrect=0;
     questionCount=0;
-    nameInput = '';
+    nameInput.value = '';
     // console.log(questionCount)
 }
 backButton.addEventListener('click', returnHome)
