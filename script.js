@@ -215,19 +215,22 @@ function startGame () {
     } 
     //Timer Functionality 
     // clearInterval(timer)
-    let startingMinutes = 1;
+    let startingMinutes = 2;
+    // incorrectModal.style.display = 'block';
     let time = startingMinutes * 60;
-    setInterval(updateCountdowon, 1000)
+    let timeInterval = setInterval(updateCountdowon, 1000)
     function updateCountdowon () {
         let minutes = Math.floor(time/60);
         let seconds = time % 60;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        // time --;
-        countdownEl.innerHTML = `${minutes}:${String(seconds).padStart(2,'0')}`;
-        time--;
-        // if (time === '0:00') {
-        //     clearInterval(updateCountdowon);
-        // }
+        if (time > 0) {
+            time --;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            countdownEl.innerHTML = `${minutes}:${seconds}`;
+        } else {
+            clearInterval(timeInterval);
+            incorrectModalAppear();
+            console.log('time zero if firing')
+        }
     }
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
@@ -309,8 +312,15 @@ function answerSelection (evt) {
             // console.log(questionsCorrect, '# Correct')
         }, 200)
     } else {
-        //if incorrect, background changes to lightcoral
+        incorrectModalAppear();
         evt.target.style.backgroundColor = 'lightcoral';
+    }
+    //remove the question that was asked from the array so the questions won't repeat
+    questions.splice(randomQuestion, 1)
+}
+
+function incorrectModalAppear () {
+    // evt.target.style.backgroundColor = 'lightcoral';
         incorrectSound.play();
         setTimeout (function() {
             //incorrect modal appears
@@ -320,9 +330,6 @@ function answerSelection (evt) {
             //add in the additional information from questions object
             answerDetails.innerText = question.incorrectInfo
         }, 200)
-    }
-    //remove the question that was asked from the array so the questions won't repeat
-    questions.splice(randomQuestion, 1)
 }
 //if golf trivia is selected, the main page appears
 function returnHome () {

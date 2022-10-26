@@ -260,7 +260,7 @@ h2 {
 #back-button:hover {
     font-weight: bold;
 }
-@media only screen and (max-width: 460px) {
+/* @media only screen and (max-width: 460px) {
     #list-item-nav {
         flex-direction: column;
         margin-left: 10px;
@@ -280,7 +280,7 @@ h2 {
     #sound-nav {
         padding-right: 0;
     }
-}
+} */
 @media only screen and (max-width: 755px) {
     #trivia-section {
         margin-left:10%;
@@ -294,5 +294,26 @@ h2 {
     }
     #answer2 {
         width: 250px;
+    }
+    #list-item-nav {
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    #question-nav{
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 100px;
+    }
+    #golf-nav {
+        margin: 0;
+        padding-left: 0;
+    }
+    #score-nav {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+    #sound-nav {
+        padding-right: 0;
     }
 }
