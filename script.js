@@ -20,7 +20,7 @@ let questionCountNav = document.querySelector('#question-nav')
 let body = document.querySelector('body')
 let triviaSection = document.querySelector('#trivia-section')
 let hintButton = document.querySelector('#hint-button')
-let countdown = document.querySelector('#countdown')
+let countdownEl = document.querySelector('#countdown')
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -177,7 +177,7 @@ let questionsCorrect = 0
 let questionCount = 0
 let randomQuestion = Math.floor(Math.random()*questions.length);
 let question = []
-let timer;
+// let timer;
 
 //Question functionality
 playGameButton.addEventListener('click', questionsAppear)
@@ -214,10 +214,23 @@ function questionsAppear () {
         backButton.style.display = 'flex';
     } 
     // timer = 59
-    for (let i=59; i>-1; i--) {
-        countdown.innerText = (i--)
-        console.log(i);
+    // clearInterval(timer)
+    let startingMinutes = 2;
+    let time = startingMinutes * 60;
+    setInterval(updateCountdowon, 1000)
+    function updateCountdowon () {
+        let minutes = Math.floor(time/60);
+        let seconds = time % 60;
+        time --;
+        countdownEl.innerHTML = `${minutes}:${seconds}`
     }
+    // setInterval ( function () {
+    //     time --
+    //     displayTime
+    //     for (let i=59; i>-1; i--) {
+    //     countdown.innerText = (i)
+    //     console.log(i);
+    // }}, 1000)
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
@@ -225,8 +238,6 @@ function questionsAppear () {
     questionSlot.style.display = 'flex';
     questionsNav.style.display = 'flex';
     scoreNav.innerText = `Score: ${questionsCorrect}`
-    console.log(questionsCorrect);
-    // console.log(questions[randomQuestion].question,"Random question object")
     question = questions[randomQuestion]
     questionSlot.innerText = question.question
     //display answer options
