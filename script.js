@@ -213,7 +213,7 @@ function questionsAppear () {
         answer2.style.display = 'none';
         backButton.style.display = 'flex';
     } 
-    // timer = 59
+    //Timer Functionality 
     // clearInterval(timer)
     let startingMinutes = 2;
     let time = startingMinutes * 60;
@@ -221,16 +221,14 @@ function questionsAppear () {
     function updateCountdowon () {
         let minutes = Math.floor(time/60);
         let seconds = time % 60;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
         time --;
         countdownEl.innerHTML = `${minutes}:${seconds}`
+        if (countdownEl.innerHTML === '00:00') {
+            incorrectModal.style.display = block;
+            return
+        }
     }
-    // setInterval ( function () {
-    //     time --
-    //     displayTime
-    //     for (let i=59; i>-1; i--) {
-    //     countdown.innerText = (i)
-    //     console.log(i);
-    // }}, 1000)
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
