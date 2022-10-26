@@ -20,6 +20,7 @@ let questionCountNav = document.querySelector('#question-nav')
 let body = document.querySelector('body')
 let triviaSection = document.querySelector('#trivia-section')
 let hintButton = document.querySelector('#hint-button')
+let countdown = document.querySelector('#countdown')
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -176,6 +177,7 @@ let questionsCorrect = 0
 let questionCount = 0
 let randomQuestion = Math.floor(Math.random()*questions.length);
 let question = []
+let timer;
 
 //Question functionality
 playGameButton.addEventListener('click', questionsAppear)
@@ -211,6 +213,11 @@ function questionsAppear () {
         answer2.style.display = 'none';
         backButton.style.display = 'flex';
     } 
+    // timer = 59
+    for (let i=59; i>-1; i--) {
+        countdown.innerText = (i--)
+        console.log(i);
+    }
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
