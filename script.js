@@ -276,6 +276,7 @@ function returnHome () {
     answerSlot.style.display = 'none';
     mainPage.style.display = 'block';
     questionsNav.style.display = 'none';
+    triviaSection.style.display = 'none';
     questionsCorrect=0;
     questionCount=0;
     nameInput.value = '';

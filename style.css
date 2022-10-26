@@ -9,6 +9,7 @@ body {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
     background-size: cover;
     background-repeat:no-repeat;
+    /* background-position: center; */
     position: absolute;
     min-width: 100%;
     min-height: 100%;
@@ -65,7 +66,7 @@ body {
     align-items: center;
 }
 h1 {
-    padding: 120px;
+    padding-top: 150px;
     font-size: 100px;
     text-align: center;
 }
@@ -99,7 +100,7 @@ h1 {
     display: flex;
     flex-flow: row-wrap;
     justify-content: center;
-    padding-bottom: 40px;
+    padding-top: 80px;
 }
 input {
     vertical-align: middle;
@@ -282,14 +283,6 @@ h2 {
         margin-left:10%;
         margin-right:10%;
     }
-    /* #question-section {
-        margin-left:10%;
-        margin-right:10%;
-    }
-    #answer-section {
-        margin-left:10%;
-        margin-right:10%;
-    } */
     #answer0 {
         width: 250px;
     }
