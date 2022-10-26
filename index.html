@@ -20,6 +20,9 @@
             </li>
             <li id='question-nav'>Question: </li>
             <li id='score-nav'></li>
+            <li id='hint-nav'>
+                <button id='hint-button'>Hint</button>
+            </li>
             <li id='sound-nav'>
                 <button id='sound-button'>Sound: 🔈</button>
             </li>
@@ -33,7 +36,7 @@
             <div id='modal-textbox'>
                 <p id='instructions-label'>Instructions:<p>
                 <p class='instructions-description'>Welcome to golf trivia!</p>
-                <p class='instructions-description' id='spacing'>Questions will appear with a set of three possible answers. Select the correct response and at the end of the set of questions, you will be able to see your score. Compete with friends to test your golf knowledge!</p>
+                <p class='instructions-description' id='spacing'>Questions will appear with a set of three possible answers. Select the correct response and at the end of the set of questions, you will be able to see your score. You only get one chance to select the right answer! If you are really stuck, the hint button will eliminate one possible answer. Compete with friends to test your golf knowledge!</p>
                 <div id='modal-footer'>
                     <button class='modal-buttons' id='close'>Okay</button>
                 </div>
@@ -70,8 +73,6 @@
             </div>
         </div>
     </div>
-    <div id='script-section'>
-        <script src="script.js"></script>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>

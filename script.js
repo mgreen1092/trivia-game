@@ -12,11 +12,15 @@ let closeModal = document.querySelector('#close')
 let nameInput = document.querySelector('#name-input')
 let playGameButton = document.querySelector('#play-game')
 let questionSlot = document.querySelector('h2')
+
+//Nav Bar of Questions section
 let questionsNav = document.querySelector('#trivia-nav')
 let scoreNav = document.querySelector('#score-nav')
 let questionCountNav = document.querySelector('#question-nav')
 let body = document.querySelector('body')
 let triviaSection = document.querySelector('#trivia-section')
+let hintButton = document.querySelector('#hint-button')
+
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -42,7 +46,6 @@ console.log(soundButton)
 let soundNav = document.querySelector('#sound-nav')
 let soundCount;
 soundButton.addEventListener('click', playPause)
-
 let correctSound = document.querySelector('#golf-clap-sound')
 //================================================================
 
@@ -65,12 +68,14 @@ let questions = [
      correct: 0,
      correctInfo: 'The Brookline Country Club has held the US Open in 1913, 1963, and 1988.',
      incorrectInfo: 'The correct answer is Brookline Country Club.',
+     hint: 2,
     },
     {question: "Who won the 2022 US Open?",
      answers: ['A: Tiger Woods', 'B: Rory McIlroy', 'C: Matt Fitzpatrick'],
      correct: 2,
      correctInfo: 'This was Matt Fitzpatrick\'s first major golf championship title.',
      incorrectInfo: 'The correct answer was Matt Fitzpatrick.',
+     hint: 1,
     },
     // {question: 'How many times has Tiger Woods won the masters?',
 //     answers: ['A: 5', 'B: 3', 'C: 6'],
@@ -222,7 +227,24 @@ function playPause () {
         mastersSound.pause()
         soundButton.innerText = 'Sound: 🔇'
     }
-    console.log(soundCount)
+}
+
+//Hint button functionality
+
+hintButton.addEventListener('click', displayHint)
+function displayHint () {
+    question = questions[randomQuestion]
+    let questionHint = question.hint
+    if (questionHint === 0) {
+        answer0.style.textDecoration = 'line-through'
+        answer0.style.backgroundColor = 'lightcoral'
+    } else if (questionHint === 1) {
+        answer1.style.textDecoration = 'line-through'
+        answer1.style.backgroundColor = 'lightcoral'
+    } else if (questionHint === 2) {
+        answer2.style.textDecoration = 'line-through'
+        answer2.style.backgroundColor = 'lightcoral'
+    }
 }
 
 //selecting answers
