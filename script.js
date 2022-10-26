@@ -1,4 +1,4 @@
-//select all elements
+//select all elements:
 //Main Page
 let mainPage = document.getElementById('main-page')
 
@@ -20,7 +20,6 @@ let questionCountNav = document.querySelector('#question-nav')
 let body = document.querySelector('body')
 let triviaSection = document.querySelector('#trivia-section')
 let hintButton = document.querySelector('#hint-button')
-
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -78,72 +77,97 @@ let questions = [
      incorrectInfo: 'The correct answer was Matt Fitzpatrick.',
      hint: 1,
     },
-    // {question: 'How many times has Tiger Woods won the masters?',
-//     answers: ['A: 5', 'B: 3', 'C: 6'],
-//     correct: 0,
-//     correctInfo: 'Tiger Woods has won the masters 5 times, and ranks just one below Jack Nicklaus with 6 wins.',
-//     incorrectInfo: 'The correct answer is Tiger Woods.'
-//     },
-//     {question: 'Who won the 2022 US Women\'s Open Golf Championship?',
-//     answers: ['A: Mina Harigae', 'B: Minjee Lee', 'C: Nelly Korda'],
-//     correct: 1,
-//     correctInfo: 'This was Minjee Lee\'s second major title win. She won by four strokes!',
-//     incorrectInfo: 'The correct answer is Minjee Lee.'
-//     },
-//     {question: 'Who was the first woman golfer to play in a men\'s PGA tour event?',
-//     answers: ['A: Annika Sorenstam', 'B: Babe Didrikson Zaharias', 'C: Michelle Wie'],
-//     correct: 1,
-//     correctInfo: 'Babe Didrikson Zaharias competed in the men\'s PGA tour in 1945.',
-//     incorrectInfo: 'The correct answer is Babe Didrikson Zaharias.'
-//     },
-//     {question: 'Where did golf originate?',
-//     answers: ['A: England', 'B: United States', 'C: Scotland'],
-//     correct: 2,
-//     correctInfo: 'Golf was first documented being played in Scotland in 1457.',
-//     incorrectInfo: 'The correct answer is Scotland.'
-//     },
-//     {question: 'When was the LPGA founded?',
-//     answers: ['A: 1950', 'B: 1990', 'C: 1970'],
-//     correct: 0,
-//     correctInfo: 'The LPGA is one of the longest-running women\'s professional sports association in the world.',
-//     incorrectInfo: 'The correct answer is 1950.'
-//     },
-//     {question: 'Which women golfer won the most major championships?',
-//     answers: ['A: Annika Sorenstam', 'B: Mickey Wright', 'C: Patty Berg'],
-//     correct: 2,
-//     correctInfo: 'Patty Berg won a total of 15 LPGA major championship.',
-//     incorrectInfo: 'The correct answer is Patty Berg.'
-//     },
-//     {question: 'Since 1970, who was the youngest person to win a PGA tour championship?',
-//     answers: ['A: Jordan Spieth', 'B: Tiger Woods', 'C: Rory McIlroy'],
-//     correct: 0,
-//     correctInfo: 'Jordan Spieth was 19 years old when he won the Deere in 2013.',
-//     incorrectInfo: 'The correct answer is Jordan Spieth.'
-//     },
-//     {question: 'What is the only major Rory McIlroy hasn\'t won?',
-//     answers: ['A: US Open', 'B: The Masters', 'C: The PGA Championship'],
-//     correct: 1,
-//     correctInfo: 'Rory McIlroy came extremely close to winning the Masters in 2022, but came in second.',
-//     incorrectInfo: 'The correct answer is the Masters.'
-//     },
-//     {question: 'What is an albatross?',
-//     answers: ['A: Double par', 'B: Hole in one', 'C: 3 under par on a hole'],
-//     correct: 2,
-//     correctInfo: 'Albatross is also synonymous to a double eagle.',
-//     incorrectInfo: 'The correct answer is albatross'
-//     },
-//     {question: 'Which golf course is the oldest course in the world?',
-//     answers: ['A: Saint Andrews Old Course', 'B: Pebble Beach', 'C: Kinghorn Golf Club'],
-//     correct: 0,
-//     correctInfo: 'Golf has been played at the Saint Andrews Old Course, located in Scotland, since 1552.',
-//     incorrectInfo: 'The correct answer is Saint Andrews Old Course.'
-//     }, 
-//     {question: 'What is Tiger Woods\' real first name?',
-//     answers: ['A: John', 'B: Eldrick', 'C: Terry'],
-//     correct: 1,
-//     correctInfo: 'Tiger got the nickname from his father in honor of his lost friend in Vietnam.',
-//     incorrectInfo: 'The correct answer is Eldrick.'
-//     }, 
+    {question: 'How many times has Tiger Woods won the masters?',
+    answers: ['A: 5', 'B: 3', 'C: 6'],
+    correct: 0,
+    correctInfo: 'Tiger Woods has won the masters 5 times, and ranks just one below Jack Nicklaus with 6 wins.',
+    incorrectInfo: 'The correct answer is Tiger Woods.',
+    hint: 2,
+    },
+    {question: 'Who won the 2022 US Women\'s Open Golf Championship?',
+    answers: ['A: Mina Harigae', 'B: Minjee Lee', 'C: Nelly Korda'],
+    correct: 1,
+    correctInfo: 'This was Minjee Lee\'s second major title win. She won by four strokes!',
+    incorrectInfo: 'The correct answer is Minjee Lee.',
+    hint: 0,
+    },
+    {question: 'Who was the first woman golfer to play in a men\'s PGA tour event?',
+    answers: ['A: Annika Sorenstam', 'B: Babe Didrikson Zaharias', 'C: Michelle Wie'],
+    correct: 1,
+    correctInfo: 'Babe Didrikson Zaharias competed in the men\'s PGA tour in 1945.',
+    incorrectInfo: 'The correct answer is Babe Didrikson Zaharias.',
+    hint: 2,
+    },
+    {question: 'Where did golf originate?',
+    answers: ['A: England', 'B: United States', 'C: Scotland'],
+    correct: 2,
+    correctInfo: 'Golf was first documented being played in Scotland in 1457.',
+    incorrectInfo: 'The correct answer is Scotland.',
+    hint: 1,
+    },
+    {question: 'When was the LPGA founded?',
+    answers: ['A: 1950', 'B: 1990', 'C: 1970'],
+    correct: 0,
+    correctInfo: 'The LPGA is one of the longest-running women\'s professional sports association in the world.',
+    incorrectInfo: 'The correct answer is 1950.',
+    hint: 1,
+    },
+    {question: 'Which women golfer won the most major championships?',
+    answers: ['A: Annika Sorenstam', 'B: Mickey Wright', 'C: Patty Berg'],
+    correct: 2,
+    correctInfo: 'Patty Berg won a total of 15 LPGA major championship.',
+    incorrectInfo: 'The correct answer is Patty Berg.',
+    hint: 0,
+    },
+    {question: 'Since 1970, who was the youngest person to win a PGA tour championship?',
+    answers: ['A: Jordan Spieth', 'B: Tiger Woods', 'C: Rory McIlroy'],
+    correct: 0,
+    correctInfo: 'Jordan Spieth was 19 years old when he won the Deere in 2013.',
+    incorrectInfo: 'The correct answer is Jordan Spieth.',
+    hint: 2,
+    },
+    {question: 'What is the only major Rory McIlroy hasn\'t won?',
+    answers: ['A: US Open', 'B: The Masters', 'C: The PGA Championship'],
+    correct: 1,
+    correctInfo: 'Rory McIlroy came extremely close to winning the Masters in 2022, but came in second.',
+    incorrectInfo: 'The correct answer is the Masters.',
+    hint: 0,
+    },
+    {question: 'What is an albatross?',
+    answers: ['A: Double par', 'B: Hole in one', 'C: 3 under par on a hole'],
+    correct: 2,
+    correctInfo: 'Albatross is also synonymous to a double eagle.',
+    incorrectInfo: 'The correct answer is albatross',
+    hint: 0,
+    },
+    {question: 'Which golf course is the oldest course in the world?',
+    answers: ['A: Saint Andrews Old Course', 'B: Pebble Beach', 'C: Kinghorn Golf Club'],
+    correct: 0,
+    correctInfo: 'Golf has been played at the Saint Andrews Old Course, located in Scotland, since 1552.',
+    incorrectInfo: 'The correct answer is Saint Andrews Old Course.',
+    hint: 2,
+    }, 
+    {question: 'What is Tiger Woods\' real first name?',
+    answers: ['A: John', 'B: Eldrick', 'C: Terry'],
+    correct: 1,
+    correctInfo: 'Tiger got the nickname from his father in honor of his lost friend in Vietnam.',
+    incorrectInfo: 'The correct answer is Eldrick.',
+    hint: 0,
+    }, 
+    {question: 'In what year was golf first included in the US Olympics?',
+    answers: ['A: 2000', 'B: 1950', 'C: 1900'],
+    correct: 2,
+    correctInfo: 'Golf has only been played in the 1900, 1904, 1908, 2016 and 2020 Olympics.',
+    incorrectInfo: 'The correct answer is 1900.',
+    hint: 1,
+    }, 
+    {question: 'What does birdie mean in golf?',
+    answers: ['A: One stroke less than par', 'B: Two strokes less than par', 'C: Hole in one'],
+    correct: 0,
+    correctInfo: 'In the 19th century, the term "bird" meant "cool" or "excellent".',
+    incorrectInfo: 'The correct answer is one stroke less than par.',
+    hint: 2,
+    }, 
 ]
 //============================================================================
 
@@ -211,7 +235,7 @@ function questionsAppear () {
     answer2.innerText = questionAnswerC;
     //update question count for nav bar
     questionCount += 1
-    questionCountNav.innerText = `Question: ${questionCount}/13`
+    questionCountNav.innerText = `Question: ${questionCount}/15`
 }
 //Sound function
 function playPause () {
