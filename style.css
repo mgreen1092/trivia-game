@@ -9,7 +9,6 @@ body {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
     background-size: cover;
     background-repeat:no-repeat;
-    /* background-position: center; */
     position: absolute;
     min-width: 100%;
     min-height: 100%;
@@ -109,7 +108,6 @@ input {
 #play-game {
     padding: 10px;
     display: inline-block;
-    /* font-weight: bold; */
     font-size: 25px;
 }
 h2 {
@@ -179,9 +177,7 @@ h2 {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
 	overflow: auto;
-	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 	display: none;
 }
 #modal-textbox {
@@ -191,12 +187,9 @@ h2 {
 	width: 500px;
 	border-radius: 2px;
 	margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-	/*This will give the box some depth.*/
 	font-size: 15px;
 	padding: 2%;
-	/* line-height: 120%; */
 	font-family: Arial, Helvetica, sans-serif;
 }
 #modal-footer {
@@ -210,9 +203,7 @@ h2 {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
 	overflow: auto;
-	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 	display: none;
 }
 #answer-modal {
@@ -222,12 +213,9 @@ h2 {
 	width: 200px;
 	border-radius: 2px;
 	margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-	/*This will give the box some depth.*/
 	font-size: 15px;
 	padding: 2%;
-	/* line-height: 120%; */
 	font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }

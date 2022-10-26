@@ -23,6 +23,7 @@ let answerSlot = document.querySelector('#answer-section')
 let answer0 = document.querySelector('#answer0')
 let answer1 = document.querySelector('#answer1')
 let answer2 = document.querySelector('#answer2')
+let answerDetails = document.querySelector('#modal-details')
 
 //correct/incorrect response modal
 let answerModal = document.querySelector('#response-modal')
@@ -141,24 +142,17 @@ let questions = [
 //============================================================================
 
 //Global Variables
-
-// let questionsCorrect;
-// let questionCount;
-// let randomQuestion;
-// let question=[]
-
 let questionsCorrect = 0
 let questionCount = 0
 let randomQuestion = Math.floor(Math.random()*questions.length);
 let question = []
+
 //Question functionality
 playGameButton.addEventListener('click', questionsAppear)
 nextButton.addEventListener('click', questionsAppear)
 
-console.log(playGameButton)
 
 function questionsAppear () {
-    soundCount = '-1';
     //remove answer modal when entering a new question
     answerModal.style.display = 'none';
     //remove background color change when entering a new question
@@ -236,8 +230,6 @@ answer0.addEventListener('click', answerSelection)
 answer1.addEventListener('click', answerSelection)
 answer2.addEventListener('click', answerSelection)
 
-let answerDetails = document.querySelector('#modal-details')
-
 function answerSelection (evt) {
     //if button selected matches the value in 'correct' background turns green and response modal appears
         if (evt.target.id[6] == questions[randomQuestion].correct) {
@@ -272,14 +264,17 @@ function answerSelection (evt) {
 }
 //if golf trivia is selected, the main page appears
 function returnHome () {
+    //return to the main page
     questionSlot.style.display = 'none';
     answerSlot.style.display = 'none';
     mainPage.style.display = 'block';
     questionsNav.style.display = 'none';
     triviaSection.style.display = 'none';
+    //re-set all values
     questionsCorrect=0;
     questionCount=0;
     nameInput.value = '';
+    //since questions were spliced out in the answer function, we now have to re-input all the questions
     questions=[
         {question: 'Where was the 2022 US Open held?',
          answers: ['A: Brookline Country Club', 'B: Torrey Pines Golf Course', 'C: Pebble Beach'],
