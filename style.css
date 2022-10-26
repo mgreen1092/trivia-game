@@ -67,9 +67,6 @@ body {
     color: white;
     font-size: 20px;
 }
-/* #timer-nav {
-
-} */
 #sound-button:hover {
     font-weight: bold;
 }
@@ -269,6 +266,7 @@ h2 {
         margin-left: 10px;
     }
     #question-nav{
+        margin-right: 0px;
         padding-left: 0;
     }
     #golf-nav {

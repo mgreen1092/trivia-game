@@ -180,11 +180,11 @@ let question = []
 // let timer;
 
 //Question functionality
-playGameButton.addEventListener('click', questionsAppear)
-nextButton.addEventListener('click', questionsAppear)
+playGameButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', startGame)
 
 
-function questionsAppear () {
+function startGame () {
     //remove answer modal when entering a new question
     answerModal.style.display = 'none';
     //remove background color change when entering a new question
@@ -215,19 +215,19 @@ function questionsAppear () {
     } 
     //Timer Functionality 
     // clearInterval(timer)
-    let startingMinutes = 2;
+    let startingMinutes = 1;
     let time = startingMinutes * 60;
     setInterval(updateCountdowon, 1000)
     function updateCountdowon () {
         let minutes = Math.floor(time/60);
         let seconds = time % 60;
         seconds = seconds < 10 ? '0' + seconds : seconds;
-        time --;
-        countdownEl.innerHTML = `${minutes}:${seconds}`
-        if (countdownEl.innerHTML === '00:00') {
-            incorrectModal.style.display = block;
-            return
-        }
+        // time --;
+        countdownEl.innerHTML = `${minutes}:${String(seconds).padStart(2,'0')}`;
+        time--;
+        // if (time === '0:00') {
+        //     clearInterval(updateCountdowon);
+        // }
     }
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
