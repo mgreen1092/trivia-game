@@ -16,6 +16,7 @@ let questionsNav = document.querySelector('#trivia-nav')
 let scoreNav = document.querySelector('#score-nav')
 let questionCountNav = document.querySelector('#question-nav')
 let body = document.querySelector('body')
+let triviaSection = document.querySelector('#trivia-section')
 
 //Answer Section
 let answerSlot = document.querySelector('#answer-section')
@@ -191,6 +192,7 @@ function questionsAppear () {
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
+    triviaSection.style.display='block';
     questionSlot.style.display = 'flex';
     questionsNav.style.display = 'flex';
     scoreNav.innerText = `Score: ${questionsCorrect}`
@@ -271,7 +273,7 @@ function answerSelection (evt) {
 //if golf trivia is selected, the main page appears
 function returnHome () {
     questionSlot.style.display = 'none';
-    answerSlot.style.display = 'block';
+    answerSlot.style.display = 'none';
     mainPage.style.display = 'block';
     questionsNav.style.display = 'none';
     questionsCorrect=0;

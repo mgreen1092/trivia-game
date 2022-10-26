@@ -117,22 +117,20 @@ h2 {
     color: black;
     text-align: center;
 }
-#question-section {
+#trivia-section {
     background-color: lightslategray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 40px;
     margin-left:20%;
     margin-right: 20%;
 }
+#question-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #answer-section {
-    background-color: lightslategray;
     padding-top: 20px;
     padding-bottom: 135px;
-    margin-left:20%;
-    margin-right:20%;
-    /* margin-bottom: 15%; */
 }
 #answer0 {
     display: flex;
@@ -277,5 +275,28 @@ h2 {
     }
     #sound-nav {
         padding-right: 0;
+    }
+}
+@media only screen and (max-width: 755px) {
+    #trivia-section {
+        margin-left:10%;
+        margin-right:10%;
+    }
+    /* #question-section {
+        margin-left:10%;
+        margin-right:10%;
+    }
+    #answer-section {
+        margin-left:10%;
+        margin-right:10%;
+    } */
+    #answer0 {
+        width: 250px;
+    }
+    #answer1 {
+        width: 250px;
+    }
+    #answer2 {
+        width: 250px;
     }
 }
