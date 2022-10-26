@@ -76,7 +76,7 @@ body {
     align-items: center;
 }
 h1 {
-    padding-top: 150px;
+    padding-top: 190px;
     font-size: 100px;
     text-align: center;
 }
@@ -110,7 +110,7 @@ h1 {
     display: flex;
     flex-flow: row-wrap;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 180px;
 }
 input {
     vertical-align: middle;

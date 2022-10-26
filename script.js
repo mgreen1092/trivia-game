@@ -47,6 +47,7 @@ let soundNav = document.querySelector('#sound-nav')
 let soundCount;
 soundButton.addEventListener('click', playPause)
 let correctSound = document.querySelector('#golf-clap-sound')
+let incorrectSound = document.querySelector('#oh-sound')
 //================================================================
 
 //Instructions open
@@ -185,8 +186,6 @@ function questionsAppear () {
         answer1.style.display = 'none';
         answer2.style.display = 'none';
         backButton.style.display = 'flex';
-        // backButton.style.margin = '0 auto';
-        // backButton.style.fontSize = '35px';
     } 
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
@@ -272,6 +271,7 @@ function answerSelection (evt) {
     } else {
         //if incorrect, background changes to lightcoral
         evt.target.style.backgroundColor = 'lightcoral';
+        incorrectSound.play();
         setTimeout (function() {
             //incorrect modal appears
             answerModal.style.display = 'block';
