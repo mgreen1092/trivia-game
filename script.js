@@ -1,53 +1,52 @@
 //select all elements:
 //Main Page
-let mainPage = document.getElementById('main-page')
+let mainPage = document.getElementById('main-page');
 
 //instructions modal
-let modal = document.querySelector('#modal')
-let openModal = document.querySelector('#open-modal')
-let modalTextbox = document.querySelector('#modal-textbox')
-let closeModal = document.querySelector('#close')
+let modal = document.querySelector('#modal');
+let openModal = document.querySelector('#open-modal');
+let modalTextbox = document.querySelector('#modal-textbox');
+let closeModal = document.querySelector('#close');
 
 //Main page elements
-let nameInput = document.querySelector('#name-input')
-let playGameButton = document.querySelector('#play-game')
-let questionSlot = document.querySelector('h2')
+let nameInput = document.querySelector('#name-input');
+let playGameButton = document.querySelector('#play-game');
+let questionSlot = document.querySelector('h2');
 
 //Nav Bar of Questions section
-let questionsNav = document.querySelector('#trivia-nav')
-let scoreNav = document.querySelector('#score-nav')
-let questionCountNav = document.querySelector('#question-nav')
-let body = document.querySelector('body')
-let triviaSection = document.querySelector('#trivia-section')
-let hintButton = document.querySelector('#hint-button')
-let countdownEl = document.querySelector('#countdown')
+let questionsNav = document.querySelector('#trivia-nav');
+let scoreNav = document.querySelector('#score-nav');
+let questionCountNav = document.querySelector('#question-nav');
+let body = document.querySelector('body');
+let triviaSection = document.querySelector('#trivia-section');
+let hintButton = document.querySelector('#hint-button');
+let countdownEl = document.querySelector('#countdown');
 
 //Answer Section
-let answerSlot = document.querySelector('#answer-section')
-let answer0 = document.querySelector('#answer0')
-let answer1 = document.querySelector('#answer1')
-let answer2 = document.querySelector('#answer2')
-let answerDetails = document.querySelector('#modal-details')
+let answerSlot = document.querySelector('#answer-section');
+let answer0 = document.querySelector('#answer0');
+let answer1 = document.querySelector('#answer1');
+let answer2 = document.querySelector('#answer2');
+let answerDetails = document.querySelector('#modal-details');
 
 //correct/incorrect response modal
-let answerModal = document.querySelector('#response-modal')
-let correctModal = document.querySelector('#correct-answer')
-let incorrectModal = document.querySelector('#incorrect-answer')
-let nextButton = document.querySelector('#next-button')
+let answerModal = document.querySelector('#response-modal');
+let correctModal = document.querySelector('#correct-answer');
+let incorrectModal = document.querySelector('#incorrect-answer');
+let nextButton = document.querySelector('#next-button');
 
 //Back Button
-let backButton = document.querySelector('#back-button')
+let backButton = document.querySelector('#back-button');
 
 //Sound
-let mastersSound = document.querySelector('#masters-sound')
+let mastersSound = document.querySelector('#masters-sound');
 mastersSound.autoplay = false;
-let soundButton = document.querySelector('#sound-button')
-console.log(soundButton)
-let soundNav = document.querySelector('#sound-nav')
+let soundButton = document.querySelector('#sound-button');
+let soundNav = document.querySelector('#sound-nav');
 let soundCount;
-soundButton.addEventListener('click', playPause)
-let correctSound = document.querySelector('#golf-clap-sound')
-let incorrectSound = document.querySelector('#oh-sound')
+soundButton.addEventListener('click', playPause);
+let correctSound = document.querySelector('#golf-clap-sound');
+let incorrectSound = document.querySelector('#oh-sound');
 //================================================================
 
 //Instructions open
@@ -58,8 +57,8 @@ function openInstructions () {
 function closeInstructions () {
     modal.style.display = 'none';
 }
-openModal.addEventListener("click", openInstructions)
-closeModal.addEventListener("click", closeInstructions)
+openModal.addEventListener("click", openInstructions);
+closeModal.addEventListener("click", closeInstructions);
 
 //=============================================================================================
 //Questions
@@ -173,28 +172,26 @@ let questions = [
 //============================================================================
 
 //Global Variables
-let questionsCorrect = 0
-let questionCount = 0
+let questionsCorrect = 0;
+let questionCount = 0;
 let randomQuestion = Math.floor(Math.random()*questions.length);
-let question = []
-// let timer;
-
-//Question functionality
-playGameButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', startGame)
-
+let question = [];
 let startingMinutes = 2;
 let timeInterval = null;
 let time = startingMinutes * 60;
 
+//Question functionality
+playGameButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', startGame);
+
 function startGame () {
     //remove answer modal when entering a new question
     answerModal.style.display = 'none';
+    soundCount = '-1';
     //remove background color change when entering a new question
-    let colorChange = document.querySelectorAll('.color-change')
+    let colorChange = document.querySelectorAll('.color-change');
     colorChange.forEach(c => {
-        c.style.backgroundColor = 'white'
-        // console.log(c)
+        c.style.backgroundColor = 'white';
     })
     //removes main display to allow questions to appear
     mainPage.style.display = 'none';
@@ -202,13 +199,13 @@ function startGame () {
     //Results message
     if (questions.length === 0) {
         if (questionsCorrect === 1) {
-            let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`
+            let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`;
             questionSlot.innerText = exitMessage;
         } else if (questionsCorrect === 0) {
-            let exitMessage = `Oh no, ${nameInput.value}, you didn't get any correct! Looks like you need to study more. Play again to see if you can beat your score.`
+            let exitMessage = `Oh no, ${nameInput.value}, you didn't get any correct! Looks like you need to study more. Play again to see if you can beat your score.`;
             questionSlot.innerText = exitMessage;
         } else {
-            let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`
+            let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`;
             questionSlot.innerText = exitMessage;
         }
         answer0.style.display = 'none';
@@ -217,23 +214,13 @@ function startGame () {
         backButton.style.display = 'flex';
     } 
     //Timer Functionality 
-    // updateCountdowon();
-    // timeInterval = setInterval(updateCountdowon, 50)
-    // startingMinutes = 2
-    // time = startingMinutes * 60;
-    // clearInterval(timer)
-    // // let startingMinutes = 2;
-    // // let timeInterval = null;
-    // let time = startingMinutes * 60;
     if (timeInterval) {
-        console.log('true')
+        // console.log('true')
         time = startingMinutes * 60;
-        // clearInterval(timeInterval);
     } else {
-        console.log('false')
-        timeInterval = setInterval(updateCountdowon, 1000)
+        // console.log('false')
+        timeInterval = setInterval(updateCountdowon, 1000);
     }
-    // let timeInterval = setInterval(updateCountdowon, 1000)
     function updateCountdowon () {
         let minutes = Math.floor(time/60);
         let seconds = time % 60;
@@ -244,7 +231,7 @@ function startGame () {
         } else {
             clearInterval(timeInterval);
             incorrectModalAppear();
-            console.log('time zero if firing')
+            console.log('time zero if firing');
             startingMinutes = 2;
             timeInterval = null;
             time = startingMinutes * 60;
@@ -256,9 +243,9 @@ function startGame () {
     triviaSection.style.display='block';
     questionSlot.style.display = 'flex';
     questionsNav.style.display = 'flex';
-    scoreNav.innerText = `Score: ${questionsCorrect}`
-    question = questions[randomQuestion]
-    questionSlot.innerText = question.question
+    scoreNav.innerText = `Score: ${questionsCorrect}`;
+    question = questions[randomQuestion];
+    questionSlot.innerText = question.question;
     //display answer options
     answerSlot.style.display = 'block';
     answer0.style.display = 'block';
@@ -271,39 +258,20 @@ function startGame () {
     answer1.innerText = questionAnswerB;
     answer2.innerText = questionAnswerC;
     //update question count for nav bar
-    questionCount += 1
-    questionCountNav.innerText = `Question: ${questionCount}/15`
+    questionCount += 1;
+    questionCountNav.innerText = `Question: ${questionCount}/15`;
 }
 
-//TIME FUNCTION 
-// let timeInterval = setInterval(updateCountdowon, 50)
-// let startingMinutes = 2;
-// let time = startingMinutes * 60;
-// function updateCountdowon () {
-//         let minutes = Math.floor(time/60);
-//         let seconds = time % 60;
-//         if (time >= 0) {
-//             time --;
-//             seconds = seconds < 10 ? '0' + seconds : seconds;
-//             countdownEl.innerHTML = `${minutes}:${seconds}`;
-//         } else {
-//             clearInterval(timeInterval);
-//             incorrectModalAppear();
-//             console.log('time zero if firing');
-//         }
-//     }
 //Sound function
 function playPause () {
     if (soundCount === '-1') {
         soundCount = '1';
-        console.log('play')
         mastersSound.play(); 
-        soundButton.innerText = 'Sound: 🔊'
+        soundButton.innerHTML = 'Sound: 🔊';
     } else if (soundCount === '1') {
         soundCount = '-1';
-        console.log('pause')
-        mastersSound.pause()
-        soundButton.innerText = 'Sound: 🔇'
+        mastersSound.pause();
+        soundButton.innerHTML = 'Sound: 🔇';
     }
 }
 
@@ -311,17 +279,17 @@ function playPause () {
 
 hintButton.addEventListener('click', displayHint)
 function displayHint () {
-    question = questions[randomQuestion]
-    let questionHint = question.hint
+    question = questions[randomQuestion];
+    let questionHint = question.hint;
     if (questionHint === 0) {
-        answer0.style.textDecoration = 'line-through'
-        answer0.style.backgroundColor = 'lightcoral'
+        answer0.style.textDecoration = 'line-through';
+        answer0.style.backgroundColor = 'lightcoral';
     } else if (questionHint === 1) {
-        answer1.style.textDecoration = 'line-through'
-        answer1.style.backgroundColor = 'lightcoral'
+        answer1.style.textDecoration = 'line-through';
+        answer1.style.backgroundColor = 'lightcoral';
     } else if (questionHint === 2) {
-        answer2.style.textDecoration = 'line-through'
-        answer2.style.backgroundColor = 'lightcoral'
+        answer2.style.textDecoration = 'line-through';
+        answer2.style.backgroundColor = 'lightcoral';
     }
 }
 
@@ -342,7 +310,7 @@ function answerSelection (evt) {
         evt.target.style.backgroundColor = 'lightcoral';
     }
     //remove the question that was asked from the array so the questions won't repeat
-    questions.splice(randomQuestion, 1)
+    questions.splice(randomQuestion, 1);
 }
 //correct modal function
 function correctModalAppear () {
@@ -354,7 +322,7 @@ function correctModalAppear () {
         correctModal.style.display = 'block';
         incorrectModal.style.display = 'none';
         //add in the additional information from questions object
-        answerDetails.innerText = question.correctInfo
+        answerDetails.innerText = question.correctInfo;
         //add to questions correct score, if answer is correct
         questionsCorrect = questionsCorrect + 1;
         // console.log(questionsCorrect, '# Correct')
@@ -370,7 +338,7 @@ function incorrectModalAppear () {
             incorrectModal.style.display = 'block';
             correctModal.style.display = 'none';
             //add in the additional information from questions object
-            answerDetails.innerText = question.incorrectInfo
+            answerDetails.innerText = question.incorrectInfo;
         }, 200)
 }
 //if golf trivia is selected, the main page appears
