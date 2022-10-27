@@ -4,6 +4,12 @@
 }
 body {
     font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat:no-repeat;
+    background-position: center top;
+    min-width: 100%;
+    min-height: 100%;
 }
 #main-page {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
@@ -13,9 +19,6 @@ body {
     position: absolute;
     min-width: 100%;
     min-height: 100%;
-    color: white;
-}
-#background {
     color: white;
 }
 #main-page-nav {

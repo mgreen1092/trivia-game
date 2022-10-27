@@ -200,7 +200,8 @@ function startGame () {
     });
     //removes main display to allow questions to appear
     mainPage.style.display = 'none';
-    body.style.backgroundColor = 'lightgray';
+    body.style.backgroundColor = 'lightgray'
+    //'url("https://media.istockphoto.com/photos/golf-green-and-tee-box-in-late-afternoon-sunlight-picture-id176834848?k=20&m=176834848&s=612x612&w=0&h=pbNMD3QwWhpAkTdDqs8Wl4hmb3V_koSuj6XxeJDEfv4=")';
     //Results message
     if (questions.length === 0) {
         if (questionsCorrect === 1) {
