@@ -38,6 +38,15 @@ body {
     margin-right: auto;
     padding-left: 10px;
 }
+#back-button, #hint-button, #sound-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+#back-button:hover {
+    font-weight: bold;
+}
 #question-nav {
     padding-left: 60px;
     text-align: center;
@@ -45,27 +54,13 @@ body {
 #score-nav {
     padding-left: 60px;
     padding-right: 60px;
+    text-align: center;
 }
-#hint-nav {
+#hint-nav, #sound-nav {
     padding-right: 60px;
-}
-#hint-button {
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 20px;
 }
 #hint-button:hover{
     font-weight: bold;
-}
-#sound-nav {
-    padding-right: 60px;
-}
-#sound-button {
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 20px;
 }
 #sound-button:hover {
     font-weight: bold;
@@ -251,48 +246,13 @@ h2 {
     margin-bottom: 0px;
     font-size: 20px;
 }
-#back-button {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-}
-#back-button:hover {
-    font-weight: bold;
-}
-/* @media only screen and (max-width: 460px) {
-    #list-item-nav {
-        flex-direction: column;
-        margin-left: 10px;
-    }
-    #question-nav{
-        margin-right: 0px;
-        padding-left: 0;
-    }
-    #golf-nav {
-        margin: 0;
-        padding-left: 0;
-    }
-    #score-nav {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #sound-nav {
-        padding-right: 0;
-    }
-} */
+
 @media only screen and (max-width: 755px) {
     #trivia-section {
-        margin-left:10%;
+        margin-left:10%; 
         margin-right:10%;
     }
-    #answer0 {
-        width: 250px;
-    }
-    #answer1 {
-        width: 250px;
-    }
-    #answer2 {
+    #answer0, #answer1, #answer2 {
         width: 250px;
     }
     #list-item-nav {
@@ -302,7 +262,7 @@ h2 {
     #question-nav{
         margin-right: 0px;
         padding-left: 0px;
-        padding-right: 100px;
+        padding-right: 100%;
     }
     #golf-nav {
         margin: 0;
@@ -310,8 +270,8 @@ h2 {
     }
     #score-nav {
         padding-left: 0;
-        padding-right: 0;
-        text-align: center;
+        padding-right: 100%;
+        
     }
     #sound-nav {
         padding-right: 0;

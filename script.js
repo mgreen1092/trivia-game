@@ -183,6 +183,9 @@ let question = []
 playGameButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', startGame)
 
+let startingMinutes = 2;
+let timeInterval = null;
+let time = startingMinutes * 60;
 
 function startGame () {
     //remove answer modal when entering a new question
@@ -214,15 +217,27 @@ function startGame () {
         backButton.style.display = 'flex';
     } 
     //Timer Functionality 
+    // updateCountdowon();
+    // timeInterval = setInterval(updateCountdowon, 50)
+    // startingMinutes = 2
+    // time = startingMinutes * 60;
     // clearInterval(timer)
-    let startingMinutes = 2;
-    // incorrectModal.style.display = 'block';
-    let time = startingMinutes * 60;
-    let timeInterval = setInterval(updateCountdowon, 1000)
+    // // let startingMinutes = 2;
+    // // let timeInterval = null;
+    // let time = startingMinutes * 60;
+    if (timeInterval) {
+        console.log('true')
+        time = startingMinutes * 60;
+        // clearInterval(timeInterval);
+    } else {
+        console.log('false')
+        timeInterval = setInterval(updateCountdowon, 1000)
+    }
+    // let timeInterval = setInterval(updateCountdowon, 1000)
     function updateCountdowon () {
         let minutes = Math.floor(time/60);
         let seconds = time % 60;
-        if (time > 0) {
+        if (time >= 0) {
             time --;
             seconds = seconds < 10 ? '0' + seconds : seconds;
             countdownEl.innerHTML = `${minutes}:${seconds}`;
@@ -230,6 +245,9 @@ function startGame () {
             clearInterval(timeInterval);
             incorrectModalAppear();
             console.log('time zero if firing')
+            startingMinutes = 2;
+            timeInterval = null;
+            time = startingMinutes * 60;
         }
     }
     //re-call randomQuestion 
@@ -256,6 +274,24 @@ function startGame () {
     questionCount += 1
     questionCountNav.innerText = `Question: ${questionCount}/15`
 }
+
+//TIME FUNCTION 
+// let timeInterval = setInterval(updateCountdowon, 50)
+// let startingMinutes = 2;
+// let time = startingMinutes * 60;
+// function updateCountdowon () {
+//         let minutes = Math.floor(time/60);
+//         let seconds = time % 60;
+//         if (time >= 0) {
+//             time --;
+//             seconds = seconds < 10 ? '0' + seconds : seconds;
+//             countdownEl.innerHTML = `${minutes}:${seconds}`;
+//         } else {
+//             clearInterval(timeInterval);
+//             incorrectModalAppear();
+//             console.log('time zero if firing');
+//         }
+//     }
 //Sound function
 function playPause () {
     if (soundCount === '-1') {
@@ -298,19 +334,9 @@ function answerSelection (evt) {
     //if button selected matches the value in 'correct' background turns green and response modal appears
         if (evt.target.id[6] == questions[randomQuestion].correct) {
         //change correct answer background color to green
-        evt.target.style.backgroundColor = 'lightgreen'
-        correctSound.play()
-        setTimeout (function() {
-            //correct modal appears
-            answerModal.style.display = 'block';
-            correctModal.style.display = 'block';
-            incorrectModal.style.display = 'none';
-            //add in the additional information from questions object
-            answerDetails.innerText = question.correctInfo
-            //add to questions correct score, if answer is correct
-            questionsCorrect = questionsCorrect + 1;
-            // console.log(questionsCorrect, '# Correct')
-        }, 200)
+            evt.target.style.backgroundColor = 'lightgreen';
+            correctSound.play();
+            correctModalAppear();
     } else {
         incorrectModalAppear();
         evt.target.style.backgroundColor = 'lightcoral';
@@ -318,7 +344,23 @@ function answerSelection (evt) {
     //remove the question that was asked from the array so the questions won't repeat
     questions.splice(randomQuestion, 1)
 }
-
+//correct modal function
+function correctModalAppear () {
+    setTimeout (function() {
+        //correct sound
+        correctSound.play();
+        //correct modal appears
+        answerModal.style.display = 'block';
+        correctModal.style.display = 'block';
+        incorrectModal.style.display = 'none';
+        //add in the additional information from questions object
+        answerDetails.innerText = question.correctInfo
+        //add to questions correct score, if answer is correct
+        questionsCorrect = questionsCorrect + 1;
+        // console.log(questionsCorrect, '# Correct')
+    }, 200)
+}
+//incorrect modal function which displays the incorrect modal
 function incorrectModalAppear () {
     // evt.target.style.backgroundColor = 'lightcoral';
         incorrectSound.play();
