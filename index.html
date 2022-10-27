@@ -31,53 +31,51 @@
             </li>
         </ul>
     </nav>
-    <div id='bakcground'>
-        <div id='main-page'>
-            <nav id='main-page-nav'>
-                <button id='open-modal'>Instructions</button>
-            </nav>
-            <div id='modal'>
-                <div id='modal-textbox'>
-                    <p id='instructions-label'>Instructions:<p>
-                    <p class='instructions-description'>Welcome to golf trivia!</p>
-                    <p class='instructions-description' id='spacing'>Questions will appear with a set of three possible answers. Select the correct response and at the end of the set of questions, you will be able to see your score. You only get one chance to select the right answer! If you are really stuck, the hint button will eliminate one possible answer. Compete with friends to test your golf knowledge!</p>
-                    <div id='modal-footer'>
-                        <button class='modal-buttons' id='close'>Okay</button>
-                    </div>
+    <div id='main-page'>
+        <nav id='main-page-nav'>
+            <button id='open-modal'>Instructions</button>
+        </nav>
+        <div id='modal'>
+            <div id='modal-textbox'>
+                <p id='instructions-label'>Instructions:<p>
+                <p class='instructions-description'>Welcome to golf trivia!</p>
+                <p class='instructions-description' id='spacing'>Questions will appear with a set of three possible answers. Select the correct response and at the end of the set of questions, you will be able to see your score. You only get one chance to select the right answer! If you are really stuck, the hint button will eliminate one possible answer. Compete with friends to test your golf knowledge!</p>
+                <div id='modal-footer'>
+                    <button class='modal-buttons' id='close'>Okay</button>
                 </div>
             </div>
-            <div id='trivia-title'>
-                <h1 id='h1'>GOLF TRIVIA</h1>
+        </div>
+        <div id='trivia-title'>
+            <h1 id='h1'>GOLF TRIVIA</h1>
+        </div>
+        <div id="bottom-section">
+            <div class='container'>
+                <input id='name-input' type='text' placeholder='Name'> 
+                <button id='play-game'>Play Game</button>
             </div>
-            <div id="bottom-section">
-                <div class='container'>
-                    <input id='name-input' type='text' placeholder='Name'> 
-                    <button id='play-game'>Play Game</button>
-                </div>
-            </div>
-        </div> 
-        <div class='hidden' id='trivia-section'>
-            <div id="question-section">
-                <h2></h2>
-            </div>
-            <div class='hidden' id='answer-section'>
-                <button class='color-change' id='answer0'></button>
-                <button class='color-change' id='answer1'></button>
-                <button class='color-change' id='answer2'></button>
-            </div>
-            <div id='response-modal'>
-                <div id='answer-modal'>
-                    <p id='correct-answer'>Correct!</p>
-                        <audio id='golf-clap-sound'>
-                            <source src='golf-clap.mp3' type='audio/mpeg'>
-                        </audio>
-                    <p id='incorrect-answer'>Incorrect!</p>
-                        <audio id='oh-sound'>
-                            <source src='short-oh-sound.m4a' type='audio/x-m4a'>
-                        </audio>
-                    <p id='modal-details'></p>
-                    <button id='next-button'>Next</button>
-                </div>
+        </div>
+    </div> 
+    <div class='hidden' id='trivia-section'>
+        <div id="question-section">
+            <h2></h2>
+        </div>
+        <div class='hidden' id='answer-section'>
+            <button class='color-change' id='answer0'></button>
+            <button class='color-change' id='answer1'></button>
+            <button class='color-change' id='answer2'></button>
+        </div>
+        <div id='response-modal'>
+            <div id='answer-modal'>
+                <p id='correct-answer'>Correct!</p>
+                    <audio id='golf-clap-sound'>
+                         <source src='golf-clap.mp3' type='audio/mpeg'>
+                    </audio>
+                <p id='incorrect-answer'>Incorrect!</p>
+                    <audio id='oh-sound'>
+                        <source src='short-oh-sound.m4a' type='audio/x-m4a'>
+                    </audio>
+                <p id='modal-details'></p>
+                <button id='next-button'>Next</button>
             </div>
         </div>
     </div>
