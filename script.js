@@ -255,8 +255,11 @@ function startGame () {
     //display answer options
     answerSlot.style.display = 'block';
     answer0.style.display = 'block';
+    answer0.style.textDecoration = 'none';
     answer1.style.display = 'block';
+    answer1.style.textDecoration = 'none';
     answer2.style.display = 'block';
+    answer2.style.textDecoration = 'none';
     //input the answer text
     questionAnswerA = questions[randomQuestion].answers[0];
     questionAnswerB = questions[randomQuestion].answers[1];
