@@ -43,7 +43,6 @@ let mastersSound = document.querySelector('#masters-sound');
 mastersSound.autoplay = false;
 let soundButton = document.querySelector('#sound-button');
 let soundNav = document.querySelector('#sound-nav');
-let soundCount;
 soundButton.addEventListener('click', playPause);
 let correctSound = document.querySelector('#golf-clap-sound');
 let incorrectSound = document.querySelector('#oh-sound');
@@ -179,6 +178,7 @@ let question = [];
 let startingMinutes = 2;
 let timeInterval = null;
 let time = startingMinutes * 60;
+let soundCount;
 
 //Question functionality
 playGameButton.addEventListener('click', startGame);
@@ -192,7 +192,7 @@ function startGame () {
     let colorChange = document.querySelectorAll('.color-change');
     colorChange.forEach(c => {
         c.style.backgroundColor = 'white';
-    })
+    });
     //removes main display to allow questions to appear
     mainPage.style.display = 'none';
     body.style.backgroundColor = 'lightgray';
@@ -207,12 +207,12 @@ function startGame () {
         } else {
             let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`;
             questionSlot.innerText = exitMessage;
-        }
+        };
         answer0.style.display = 'none';
         answer1.style.display = 'none';
         answer2.style.display = 'none';
         backButton.style.display = 'flex';
-    } 
+    };
     //Timer Functionality 
     if (timeInterval) {
         // console.log('true')
@@ -220,7 +220,7 @@ function startGame () {
     } else {
         // console.log('false')
         timeInterval = setInterval(updateCountdowon, 1000);
-    }
+    };
     function updateCountdowon () {
         let minutes = Math.floor(time/60);
         let seconds = time % 60;
@@ -235,8 +235,8 @@ function startGame () {
             startingMinutes = 2;
             timeInterval = null;
             time = startingMinutes * 60;
-        }
-    }
+        };
+    };
     //re-call randomQuestion 
     randomQuestion = Math.floor(Math.random()*questions.length);
     //display questions
@@ -260,7 +260,7 @@ function startGame () {
     //update question count for nav bar
     questionCount += 1;
     questionCountNav.innerText = `Question: ${questionCount}/15`;
-}
+};
 
 //Sound function
 function playPause () {
@@ -272,12 +272,12 @@ function playPause () {
         soundCount = '-1';
         mastersSound.pause();
         soundButton.innerHTML = 'Sound: 🔇';
-    }
-}
+    };
+};
 
 //Hint button functionality
 
-hintButton.addEventListener('click', displayHint)
+hintButton.addEventListener('click', displayHint);
 function displayHint () {
     question = questions[randomQuestion];
     let questionHint = question.hint;
@@ -290,13 +290,13 @@ function displayHint () {
     } else if (questionHint === 2) {
         answer2.style.textDecoration = 'line-through';
         answer2.style.backgroundColor = 'lightcoral';
-    }
-}
+    };
+};
 
 //selecting answers
-answer0.addEventListener('click', answerSelection)
-answer1.addEventListener('click', answerSelection)
-answer2.addEventListener('click', answerSelection)
+answer0.addEventListener('click', answerSelection);
+answer1.addEventListener('click', answerSelection);
+answer2.addEventListener('click', answerSelection);
 
 function answerSelection (evt) {
     //if button selected matches the value in 'correct' background turns green and response modal appears
@@ -308,10 +308,10 @@ function answerSelection (evt) {
     } else {
         incorrectModalAppear();
         evt.target.style.backgroundColor = 'lightcoral';
-    }
+    };
     //remove the question that was asked from the array so the questions won't repeat
     questions.splice(randomQuestion, 1);
-}
+};
 //correct modal function
 function correctModalAppear () {
     setTimeout (function() {
@@ -326,8 +326,8 @@ function correctModalAppear () {
         //add to questions correct score, if answer is correct
         questionsCorrect = questionsCorrect + 1;
         // console.log(questionsCorrect, '# Correct')
-    }, 200)
-}
+    }, 200);
+};
 //incorrect modal function which displays the incorrect modal
 function incorrectModalAppear () {
     // evt.target.style.backgroundColor = 'lightcoral';
@@ -339,8 +339,8 @@ function incorrectModalAppear () {
             correctModal.style.display = 'none';
             //add in the additional information from questions object
             answerDetails.innerText = question.incorrectInfo;
-        }, 200)
-}
+        }, 200);
+};
 //if golf trivia is selected, the main page appears
 function returnHome () {
     //return to the main page
@@ -367,7 +367,7 @@ function returnHome () {
          correctInfo: 'This was Matt Fitzpatrick\'s first major golf championship title.',
          incorrectInfo: 'The correct answer was Matt Fitzpatrick.',
         },]
-}
-backButton.addEventListener('click', returnHome)
+};
+backButton.addEventListener('click', returnHome);
 
 
