@@ -214,6 +214,7 @@ function startGame () {
         backButton.style.display = 'flex';
     };
     //Timer Functionality 
+    // clearInterval(timeInterval);
     if (timeInterval) {
         // console.log('true')
         time = startingMinutes * 60;
@@ -353,6 +354,8 @@ function returnHome () {
     questionsCorrect=0;
     questionCount=0;
     nameInput.value = '';
+    // startingMinutes = 0;
+    // clearInterval(timeInterval);
     //since questions were spliced out in the answer function, we now have to re-input all the questions
     questions=[
         {question: 'Where was the 2022 US Open held?',

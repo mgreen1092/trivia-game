@@ -8,6 +8,7 @@ body {
 #main-page {
     background-image: url("https://www.mngolf.org/Content/designs/2021/images/temp/courses.png");
     background-size: cover;
+    object-fit: cover;
     background-repeat:no-repeat;
     position: absolute;
     min-width: 100%;
