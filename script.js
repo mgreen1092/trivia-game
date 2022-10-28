@@ -40,6 +40,7 @@ let nextButton = document.querySelector('#next-button');
 
 //Back Button
 let backButton = document.querySelector('#back-button');
+let playAgain = document.querySelector('#play-again-button');
 
 //Sound
 let mastersSound = document.querySelector('#masters-sound');
@@ -71,7 +72,6 @@ let questions = [
      correctInfo: 'The Brookline Country Club has held the US Open in 1913, 1963, and 1988.',
      incorrectInfo: 'The correct answer is Brookline Country Club.',
      hint: 2,
-     backgroundImage: 'https://media.istockphoto.com/photos/golf-green-and-tee-box-in-late-afternoon-sunlight-picture-id176834848?k=20&m=176834848&s=612x612&w=0&h=pbNMD3QwWhpAkTdDqs8Wl4hmb3V_koSuj6XxeJDEfv4='
     },
     {question: "Who won the 2022 US Open?",
      answers: ['A: Tiger Woods', 'B: Rory McIlroy', 'C: Matt Fitzpatrick'],
@@ -79,7 +79,6 @@ let questions = [
      correctInfo: 'This was Matt Fitzpatrick\'s first major golf championship title.',
      incorrectInfo: 'The correct answer was Matt Fitzpatrick.',
      hint: 1,
-     backgroundImage: 'https://media.istockphoto.com/photos/golf-course-putting-green-with-flag-at-sunset-picture-id1348081839?b=1&k=20&m=1348081839&s=170667a&w=0&h=hTRTvEYkCzAX9TtL4tnN6hKhdXarHstgufpEI2VolVY='
     },
     {question: 'How many times has Tiger Woods won the masters?',
     answers: ['A: 5', 'B: 3', 'C: 6'],
@@ -193,6 +192,7 @@ function startGame () {
     //remove answer modal when entering a new question
     answerModal.style.display = 'none';
     soundCount = '-1';
+    playAgain.style.display = 'none';
     //remove background color change when entering a new question
     let colorChange = document.querySelectorAll('.color-change');
     colorChange.forEach(c => {
@@ -206,22 +206,27 @@ function startGame () {
         if (questionsCorrect === 1) {
             let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`;
             questionSlot.innerText = exitMessage;
+            resetTimer();
         } else if (questionsCorrect === 0) {
             let exitMessage = `Oh no, ${nameInput.value}, you didn't get any correct! Looks like you need to study more. Play again to see if you can beat your score.`;
             questionSlot.innerText = exitMessage;
+            resetTimer();
         } else {
             let exitMessage = `Congrats, ${nameInput.value}! You got ${questionsCorrect} question correct! Play again and challenge your friends.`;
             questionSlot.innerText = exitMessage;
+            resetTimer();
         };
+        playAgain.style.display = 'flex';
         answer0.style.display = 'none';
         answer1.style.display = 'none';
         answer2.style.display = 'none';
         backButton.style.display = 'flex';
     };
+    console.log(questions.length)
     //Timer Functionality 
-    if (timeInterval) {
+    if (timeInterval ) {
         time = startingMinutes * 60;
-    } else {
+    } else if (questions.length !== 0) {
         timeInterval = setInterval(updateCountdowon, 1000);
     };
     function updateCountdowon () {
@@ -234,7 +239,6 @@ function startGame () {
         } else {
             clearInterval(timeInterval);
             incorrectModalAppear();
-            console.log('time zero if firing');
             startingMinutes = 2;
             timeInterval = null;
             time = startingMinutes * 60;
@@ -251,6 +255,7 @@ function startGame () {
     // let questionBackground = question.backgroundImage
     // background.style.backgroundImage = `url(${questionBackground})`
     // console.log(background)
+    if (question) {
     questionSlot.innerText = question.question;
     //display answer options
     answerSlot.style.display = 'block';
@@ -270,6 +275,7 @@ function startGame () {
     //update question count for nav bar
     questionCount += 1;
     questionCountNav.innerText = `Question: ${questionCount}/15`;
+    };
 };
 
 //Sound function
@@ -383,7 +389,6 @@ function returnHome () {
         correctInfo: 'The Brookline Country Club has held the US Open in 1913, 1963, and 1988.',
         incorrectInfo: 'The correct answer is Brookline Country Club.',
         hint: 2,
-        backgroundImage: 'https://media.istockphoto.com/photos/golf-green-and-tee-box-in-late-afternoon-sunlight-picture-id176834848?k=20&m=176834848&s=612x612&w=0&h=pbNMD3QwWhpAkTdDqs8Wl4hmb3V_koSuj6XxeJDEfv4='
        },
        {question: "Who won the 2022 US Open?",
         answers: ['A: Tiger Woods', 'B: Rory McIlroy', 'C: Matt Fitzpatrick'],
@@ -391,7 +396,6 @@ function returnHome () {
         correctInfo: 'This was Matt Fitzpatrick\'s first major golf championship title.',
         incorrectInfo: 'The correct answer was Matt Fitzpatrick.',
         hint: 1,
-        backgroundImage: 'https://media.istockphoto.com/photos/golf-course-putting-green-with-flag-at-sunset-picture-id1348081839?b=1&k=20&m=1348081839&s=170667a&w=0&h=hTRTvEYkCzAX9TtL4tnN6hKhdXarHstgufpEI2VolVY='
        },
        {question: 'How many times has Tiger Woods won the masters?',
        answers: ['A: 5', 'B: 3', 'C: 6'],
@@ -487,5 +491,6 @@ function returnHome () {
     ]
 };
 backButton.addEventListener('click', returnHome);
+playAgain.addEventListener('click', returnHome)
 
 

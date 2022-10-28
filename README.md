@@ -27,6 +27,8 @@ Website Screenshot:
 
 Installation Instructions:
 
+- No installation required
+
 Wireframes:
 
 - https://media.git.generalassemb.ly/user/45684/files/730bab78-7bf4-4231-be59-673b791411d3
