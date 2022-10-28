@@ -19,6 +19,7 @@ Project is created with:
 - HTML5
 - CSS
 - JavaScript
+- Google Fonts
 
 ## Setup
 
