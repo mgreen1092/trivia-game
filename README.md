@@ -52,7 +52,7 @@ MVP Goals:
 
 Challenges and Unsolved Problems:
 
-Creating the timer was the most challenging part of the project given how I had all the functions set up. When I first created the timer, it was in an infinite loop. To resolve this, I created an if, else statement to only allow the timer to decrement if the timer number was greater than or equal to one. I also needed to create a separate function to reset the timer when reesetting the game.
+Creating the timer was the most challenging part of the project given how I had all the functions set up. When I first created the timer, it was in an infinite loop. To resolve this, I created an if, else statement to only allow the timer to decrement if the timer number was greater than or equal to one. I also needed to create a separate function to reset the timer when resetting the game.
 
 One unsolved problem I currently have is adding a background image in the background of the trivia page to make it more eye catching. Ideally, I would like to have the background image rotate through with the questions. However, when I try to add a background image, there is white space at the bottom of the screen, almost as if a div is holding the space.
 
