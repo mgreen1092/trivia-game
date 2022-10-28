@@ -222,7 +222,6 @@ function startGame () {
         answer2.style.display = 'none';
         backButton.style.display = 'flex';
     };
-    console.log(questions.length)
     //Timer Functionality 
     if (timeInterval ) {
         time = startingMinutes * 60;
@@ -252,9 +251,6 @@ function startGame () {
     questionsNav.style.display = 'flex';
     scoreNav.innerText = `Score: ${questionsCorrect}`;
     question = questions[randomQuestion];
-    // let questionBackground = question.backgroundImage
-    // background.style.backgroundImage = `url(${questionBackground})`
-    // console.log(background)
     if (question) {
     questionSlot.innerText = question.question;
     //display answer options
@@ -339,7 +335,6 @@ function correctModalAppear () {
         answerDetails.innerText = question.correctInfo;
         //add to questions correct score, if answer is correct
         questionsCorrect = questionsCorrect + 1;
-        // console.log(questionsCorrect, '# Correct')
     }, 200);
 };
 //incorrect modal function which displays the incorrect modal
