@@ -1,16 +1,6 @@
-##Table of Contents
+# Golf Trivia
 
-- [General information] (#general-information)
-- [Technologies] (#technologies)
-- [Setup] (#setup)
-
-## General Information
-
-Project Name:
-
-- Golf Trivia
-  Project Description:
-- Trivia game with 15 golf related questions
+Test you knowledge of men's and women's golf history!
 
 ## Technologies
 
